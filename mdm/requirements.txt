@@ -1,4 +1,4 @@
-alembic==1.13.1
+pip install flask && pip freeze > requirements.txtalembic==1.13.1
 annotated-types==0.7.0
 appnope==0.1.4
 asttokens==2.4.1

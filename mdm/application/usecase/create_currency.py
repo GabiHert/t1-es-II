@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Protocol
 
-from domain.entity.currency import CurrencyEntity
+from application.domain.entity.currency import CurrencyEntity
 
 
 class CreateCurrencyUseCase(Protocol):

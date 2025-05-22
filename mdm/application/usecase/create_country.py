@@ -1,7 +1,7 @@
 from abc import abstractmethod
 from typing import Protocol
 
-from domain.entity.country import CountryEntity
+from application.domain.entity.country import CountryEntity
 
 
 class CreateCountryUseCase(Protocol):

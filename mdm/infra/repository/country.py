@@ -1,4 +1,4 @@
-from models.country import Country
+from infra.repository.models.country import Country
 from sqlalchemy.orm import Session
 
 from application.domain.entity.country import CountryEntity
