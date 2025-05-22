@@ -1,9 +1,10 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 from datetime import datetime
 
-Base = declarative_base()
+from sqlalchemy import Column, DateTime, Float, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
+
+from config.db.alembic.base import Base
+
 
 class Country(Base):
     __tablename__ = 'countries'
