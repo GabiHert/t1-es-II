@@ -1,6 +1,5 @@
 docker-up:
-	docker-compose down
-	docker-compose up -d
-	
+	docker-compose -f ./build/docker-compose.yml down
+	docker-compose -f ./build/docker-compose.yml up 
 docker-down:
-	docker-compose down
+	docker-compose -f ./build/docker-compose.yml down
