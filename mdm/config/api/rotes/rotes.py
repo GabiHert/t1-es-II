@@ -37,15 +37,18 @@ def get_country_by_id(country_id):
 
 @server.route("/currencies", methods=['GET'])
 def get_currencies():
-    return jsonify({"message": "List of currencies"})
+    currencies = injector.currency_controller.get_all_currencies()
+    return jsonify(currencies)
 
 
 @server.route("/currencies", methods=['POST'])
 def create_currency():
     data = get_json_data()
-    return jsonify(injector.country_controller.create_country(data)), 201
+    currency = injector.currency_controller.create_currency(data)
+    return jsonify(currency), 201
 
 
 @server.route("/currencies/<int:currency_id>", methods=['GET'])
 def get_currency_by_id(currency_id):
-    return jsonify({"message": f"Currency with id {currency_id}"})
+    currency = injector.currency_controller.get_currency_by_id(currency_id)
+    return jsonify(currency)
