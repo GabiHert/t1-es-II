@@ -2,9 +2,11 @@ from application.usecase.create_country import CreateCountryUseCase
 from application.usecase.get_country import GetCountryUseCase
 from application.usecase.create_currency import CreateCurrencyUseCase
 from application.usecase.get_currency import GetCurrencyUseCase
+from application.usecase.sync_data import SyncDataUseCase
 from config.db.db import SessionMaker
 from infra.entrypoint.controllers.country_controller import CountryController
 from infra.entrypoint.controllers.currency_controller import CurrencyController
+from infra.entrypoint.controllers.sync_controller import SyncController
 from infra.repository.country import CountryRepository
 from infra.repository.currency import CurrencyRepository
 
@@ -30,5 +32,10 @@ class Injector:
             self._create_currency_usecase,
             self._get_currency_usecase
         )
+
+        # Sync dependencies
+        self._sync_data_usecase = SyncDataUseCase()
+        self.sync_controller = SyncController(self._sync_data_usecase)
+
 
 injector = Injector()

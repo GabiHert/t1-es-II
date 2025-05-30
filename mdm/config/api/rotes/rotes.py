@@ -16,6 +16,16 @@ def get_json_data():
         raise JSONValidationError(f"Invalid JSON format: {str(e)}")
 
 
+@server.route("/sync", methods=['GET'])
+def sync():
+    """
+    Endpoint to fetch latest injection and trigger a new extraction.
+    Returns the extraction response with HTTP 200 OK status.
+    """
+    extraction_response = injector.sync_controller.sync()
+    return jsonify(extraction_response)
+
+
 @server.route("/countries", methods=['GET'])
 def get_countries():
     countries = injector.country_controller.get_all_countries()
@@ -52,3 +62,4 @@ def create_currency():
 def get_currency_by_id(currency_id):
     currency = injector.currency_controller.get_currency_by_id(currency_id)
     return jsonify(currency)
+
