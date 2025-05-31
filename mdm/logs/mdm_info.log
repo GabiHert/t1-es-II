@@ -124,3 +124,115 @@
 2025-05-31 20:16:43,342 - mdm - INFO - Initializing MDM service and registering routes...
 2025-05-31 20:16:43,467 - mdm - INFO - Routes registered successfully
 2025-05-31 20:16:43,467 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:19:50,792 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:19:50,834 - mdm - ERROR - Unhandled error: 'id'
+2025-05-31 20:19:50,835 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:19:51,635 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:19:51,648 - mdm - ERROR - Unhandled error: 'id'
+2025-05-31 20:19:51,649 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:20:03,637 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:20:03,670 - mdm - ERROR - Unhandled error: 'id'
+2025-05-31 20:20:03,671 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:23:02,029 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:23:02,152 - mdm - INFO - Routes registered successfully
+2025-05-31 20:23:02,152 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:23:02,346 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:23:02,443 - mdm - INFO - Routes registered successfully
+2025-05-31 20:23:02,443 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:23:12,250 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:23:12,359 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:23:13,908 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:23:13,935 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:23:51,533 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:23:55,451 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:27:32,736 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:27:38,537 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:27:52,779 - mdm - INFO - Incoming request: GET /countries
+2025-05-31 20:27:52,831 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:28:30,934 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:28:31,032 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:28:31,053 - mdm - INFO - Incoming request: GET /countries
+2025-05-31 20:28:31,065 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:28:38,339 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:28:38,387 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:28:38,407 - mdm - INFO - Incoming request: GET /countries
+2025-05-31 20:28:38,415 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:28:44,213 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:28:44,249 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:28:44,265 - mdm - INFO - Incoming request: GET /countries
+2025-05-31 20:28:44,268 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:30:22,374 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:30:22,776 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:30:26,835 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:30:26,882 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:30:42,787 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:30:46,978 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:31:35,018 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:31:35,161 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:31:37,501 - mdm - INFO - Incoming request: GET /countries/496
+2025-05-31 20:31:37,522 - mdm - ERROR - Unhandled error: Country with id 496 not found
+2025-05-31 20:31:37,523 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:32:15,312 - mdm - INFO - Incoming request: GET /countries/123
+2025-05-31 20:32:15,323 - mdm - ERROR - Unhandled error: Country with id 123 not found
+2025-05-31 20:32:15,324 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:34:00,126 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:34:00,293 - mdm - INFO - Routes registered successfully
+2025-05-31 20:34:00,293 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:34:10,099 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:34:10,252 - mdm - INFO - Routes registered successfully
+2025-05-31 20:34:10,252 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:34:52,484 - mdm - INFO - Incoming request: GET /countries/123
+2025-05-31 20:34:52,606 - mdm - ERROR - Unhandled error: Country with id 123 not found
+2025-05-31 20:34:52,607 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:35:05,784 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:35:05,955 - mdm - INFO - Routes registered successfully
+2025-05-31 20:35:05,956 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:35:06,207 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:35:06,347 - mdm - INFO - Routes registered successfully
+2025-05-31 20:35:06,347 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:35:09,014 - mdm - INFO - Incoming request: GET /countries/123
+2025-05-31 20:35:09,088 - mdm - ERROR - Unhandled error: Country with id 123 not found
+2025-05-31 20:35:09,089 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:36:09,485 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:36:10,540 - mdm - INFO - Routes registered successfully
+2025-05-31 20:36:10,540 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:37:11,009 - mdm - INFO - Incoming request: GET /countries/123
+2025-05-31 20:37:11,128 - mdm - ERROR - Unhandled error: Country with id 123 not found
+2025-05-31 20:37:11,129 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:37:15,363 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:37:15,508 - mdm - INFO - Routes registered successfully
+2025-05-31 20:37:15,508 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:37:15,737 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:37:15,871 - mdm - INFO - Routes registered successfully
+2025-05-31 20:37:15,871 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:37:23,387 - mdm - INFO - Incoming request: GET /countries/123
+2025-05-31 20:37:23,475 - mdm - ERROR - Unhandled error: Country with id 123 not found
+2025-05-31 20:37:23,475 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:38:03,189 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:38:03,364 - mdm - INFO - Routes registered successfully
+2025-05-31 20:38:03,364 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:38:04,747 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:38:04,856 - mdm - INFO - Routes registered successfully
+2025-05-31 20:38:04,856 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:38:52,201 - mdm - INFO - Incoming request: GET /countries/123
+2025-05-31 20:38:52,314 - mdm - INFO - Response status: 404 NOT FOUND
+2025-05-31 20:39:29,199 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:39:29,315 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:39:29,331 - mdm - INFO - Incoming request: GET /countries/496
+2025-05-31 20:39:29,336 - mdm - INFO - Response status: 404 NOT FOUND
+2025-05-31 20:39:29,341 - mdm - INFO - Incoming request: POST /countries
+2025-05-31 20:39:29,363 - mdm - INFO - Response status: 201 CREATED
+2025-05-31 20:39:53,044 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:39:53,117 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:39:53,155 - mdm - INFO - Incoming request: GET /countries/496
+2025-05-31 20:39:53,205 - mdm - INFO - Response status: 404 NOT FOUND
+2025-05-31 20:39:53,218 - mdm - INFO - Incoming request: POST /countries
+2025-05-31 20:39:53,229 - mdm - INFO - Response status: 201 CREATED
+2025-05-31 20:39:59,258 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:39:59,306 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:39:59,320 - mdm - INFO - Incoming request: GET /countries/496
+2025-05-31 20:39:59,328 - mdm - INFO - Response status: 404 NOT FOUND
+2025-05-31 20:39:59,332 - mdm - INFO - Incoming request: POST /countries
+2025-05-31 20:39:59,342 - mdm - INFO - Response status: 201 CREATED
+2025-05-31 20:40:36,856 - mdm - INFO - Incoming request: GET /countries
+2025-05-31 20:40:36,867 - mdm - INFO - Response status: 200 OK

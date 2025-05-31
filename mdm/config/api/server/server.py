@@ -25,8 +25,3 @@ def log_request():
 def log_response(response):
     logger.info(f"Response status: {response.status}")
     return response
-
-@server.errorhandler(Exception)
-def handle_error(error):
-    logger.error(f"Unhandled error: {str(error)}")
-    return {"error": str(error)}, 500

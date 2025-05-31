@@ -1,7 +1,7 @@
 from typing import Dict, List
 
 from application.domain.entity.country import CountryEntity
-from application.errors.error_handler import MissingFieldError, InvalidFieldError
+from application.errors.error_handler import MissingFieldError, InvalidFieldError, CountryNotFoundError
 from application.usecase.create_country import CreateCountryUseCase
 from application.usecase.get_country import GetCountryUseCase
 
@@ -57,12 +57,17 @@ class CountryController:
         ]
 
     def get_country_by_id(self, country_id: int) -> Dict:
-        country = self._get_country_usecase.get_by_id(country_id)
-        return {
-            "country_id": country.country_id,
-            "country_name": country.country_name,
-            "numeric_code": country.numeric_code,
-            "capital_city": country.capital_city,
-            "population": country.population,
-            "area": country.area
-        }
+        try:
+            country = self._get_country_usecase.get_by_id(country_id)
+            return {
+                "country_id": country.country_id,
+                "country_name": country.country_name,
+                "numeric_code": country.numeric_code,
+                "capital_city": country.capital_city,
+                "population": country.population,
+                "area": country.area
+            }
+        except ValueError as e:
+            if "Country with id" in str(e) and "not found" in str(e):
+                raise CountryNotFoundError(str(e))
+            raise InvalidFieldError(str(e))

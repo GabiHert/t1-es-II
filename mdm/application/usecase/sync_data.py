@@ -25,7 +25,7 @@ class SyncDataUseCase:
             DEM_ENDPOINT+"/loads",
             json={
                 "service": "mdm",
-                "extraction_id": latest_extraction["id"]
+                "extraction_id": latest_extraction["extraction_id"]
             }
         )
         load_response.raise_for_status()

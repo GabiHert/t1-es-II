@@ -45,14 +45,23 @@ class NotFoundError(APIError):
     message = "Resource not found"
 
 
+class CountryNotFoundError(NotFoundError):
+    error_code = "COUNTRY_NOT_FOUND"
+    message = "Country not found"
+
+
 class DatabaseError(APIError):
     status_code = 500
     error_code = "DATABASE_ERROR"
     message = "Database operation failed"
 
 
+def is_country_not_found_error(error: Exception) -> bool:
+    return isinstance(error, ValueError) and "Country with id" in str(error) and "not found" in str(error)
+
+
 error_mapping: Dict[Type[Exception], Type[APIError]] = {
     KeyError: MissingFieldError,
-    ValueError: InvalidFieldError,
+    ValueError: lambda e: CountryNotFoundError(str(e)) if is_country_not_found_error(e) else InvalidFieldError(str(e)),
     JSONDecodeError: JSONValidationError,
 } 

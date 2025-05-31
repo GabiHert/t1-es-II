@@ -17,8 +17,7 @@ class RestCountriesStrategy:
         os.makedirs(f"extractions/{RestCountriesStrategy.SOURCE}", exist_ok=True)
         
         # Save data to file
-        timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-        filename = f"{extraction_id}_{timestamp}.json"
+        filename = f"{extraction_id}.json"
         filepath = f"extractions/{RestCountriesStrategy.SOURCE}/{filename}"
         
         with open(filepath, 'w') as f:

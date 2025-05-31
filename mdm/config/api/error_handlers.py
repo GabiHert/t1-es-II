@@ -15,7 +15,10 @@ def init_error_handlers(app):
         # Map known exceptions to our custom errors
         error_class = error_mapping.get(type(error))
         if error_class:
-            api_error = error_class(str(error))
+            if callable(error_class):
+                api_error = error_class(error)
+            else:
+                api_error = error_class(str(error))
             return jsonify(api_error.to_dict()), api_error.status_code
 
         # Handle SQLAlchemy errors

@@ -102,7 +102,7 @@ class ExtractionService:
             import glob
             import os
             
-            files = glob.glob(f"extractions/{load.source}/{load.extraction_id}_*.json")
+            files = glob.glob(f"extractions/{load.source}/{load.extraction_id}.json")
             if not files:
                 raise ValueError("Extraction file not found")
                 
@@ -118,8 +118,7 @@ class ExtractionService:
                 country, currencies = strategy.transform_for_mdm(country_data)
                 
                 # Check if country exists
-                response = requests.get(f"{ExtractionService.MDM_BASE_URL}/countries", 
-                                     params={"name": country["country_name"]})
+                response = requests.get(f"{ExtractionService.MDM_BASE_URL}/countries/{country['numeric_code']}")
                 
                 if response.status_code == 404:
                     # Create new country
@@ -143,8 +142,7 @@ class ExtractionService:
                 for currency_data in currencies:
                     currency_data["country_id"] = country_id
                     
-                    response = requests.get(f"{ExtractionService.MDM_BASE_URL}/currencies",
-                                         params={"code": currency_data["currency_code"]})
+                    response = requests.get(f"{ExtractionService.MDM_BASE_URL}/currencies/{currency_data['currency_id']}")
                     
                     if response.status_code == 404:
                         requests.post(f"{ExtractionService.MDM_BASE_URL}/currencies",
