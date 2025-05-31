@@ -1,0 +1,9 @@
+2025-05-31 20:05:27,782 - mdm - ERROR - Unhandled error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-31 20:07:31,983 - mdm - ERROR - Unhandled error: HTTPConnectionPool(host='dem-service', port=80): Max retries exceeded with url: /source/mdm-source/injections (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x1056e1a80>: Failed to resolve 'dem-service' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-05-31 20:08:35,244 - mdm - ERROR - Failed to register routes: cannot import name 'INJECTIONS_ENDPOINT' from 'config.api.dem_config' (/Users/gabihert/Documents/Projects/faculdade/t1-es-II/mdm/config/api/dem_config.py)
+2025-05-31 20:10:47,898 - mdm - ERROR - Unhandled error: No injections found
+2025-05-31 20:10:52,163 - mdm - ERROR - Unhandled error: No injections found
+2025-05-31 20:10:53,184 - mdm - ERROR - Unhandled error: No injections found
+2025-05-31 20:12:47,124 - mdm - ERROR - Failed to register routes: name 'SOURCE_ID' is not defined
+2025-05-31 20:14:16,727 - mdm - ERROR - Unhandled error: 'id'
+2025-05-31 20:15:04,227 - mdm - ERROR - Unhandled error: 'id'

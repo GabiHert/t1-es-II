@@ -2,44 +2,43 @@ import requests
 from datetime import datetime
 from typing import Dict, Optional
 
-from config.api.dem_config import INJECTIONS_ENDPOINT, EXTRACTIONS_ENDPOINT
-
+from config.api.dem_config import DEM_ENDPOINT  
 
 class SyncDataUseCase:
     def sync(self) -> Dict:
         """
-        Fetches the latest injection and triggers a new extraction.
+        Fetches the latest extraction and triggers a new load.
         Returns the extraction response.
         """
-        # Step 1: Fetch injections
-        response = requests.get(INJECTIONS_ENDPOINT)
+        # Step 1: Fetch extractions
+        response = requests.get(DEM_ENDPOINT+"/source/restcountries/extractions")
         response.raise_for_status()
-        injections = response.json()
+        extractions = response.json()
 
-        # Step 2: Find latest injection
-        latest_injection = self._get_latest_injection(injections)
-        if not latest_injection:
-            raise ValueError("No injections found")
+        # Step 2: Find latest extraction
+        latest_extraction = self._get_latest_extraction(extractions)
+        if not latest_extraction:
+            raise ValueError("No extraction found")
 
         # Step 3: Trigger extraction
-        extraction_response = requests.post(
-            EXTRACTIONS_ENDPOINT,
+        load_response = requests.post(
+            DEM_ENDPOINT+"/loads",
             json={
                 "service": "mdm",
-                "injection_id": latest_injection["id"]
+                "extraction_id": latest_extraction["id"]
             }
         )
-        extraction_response.raise_for_status()
+        load_response.raise_for_status()
         
         # Step 4: Return extraction response
-        return extraction_response.json()
+        return load_response.json()
 
-    def _get_latest_injection(self, injections: list) -> Optional[Dict]:
-        """Find the injection with the most recent created_at timestamp."""
-        if not injections:
+    def _get_latest_extraction(self, extractions: list) -> Optional[Dict]:
+        """Find the extraction with the most recent created_at timestamp."""
+        if not extractions:
             return None
             
         return max(
-            injections,
+            extractions,
             key=lambda x: datetime.fromisoformat(x["created_at"])
         ) 

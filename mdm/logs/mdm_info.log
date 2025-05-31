@@ -1,0 +1,126 @@
+2025-05-31 20:01:19,198 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:01:19,330 - mdm - INFO - Routes registered successfully
+2025-05-31 20:01:25,756 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:01:25,885 - mdm - INFO - Routes registered successfully
+2025-05-31 20:01:32,550 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:01:32,691 - mdm - INFO - Routes registered successfully
+2025-05-31 20:01:32,691 - mdm - INFO - Starting MDM service on port 5000
+2025-05-31 20:05:15,193 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:05:15,623 - mdm - INFO - Routes registered successfully
+2025-05-31 20:05:15,623 - mdm - INFO - Starting MDM service on port 5010
+2025-05-31 20:05:19,503 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:05:19,607 - mdm - INFO - Routes registered successfully
+2025-05-31 20:05:19,607 - mdm - INFO - Starting MDM service on port 5010
+2025-05-31 20:05:19,811 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:05:19,924 - mdm - INFO - Routes registered successfully
+2025-05-31 20:05:19,925 - mdm - INFO - Starting MDM service on port 5010
+2025-05-31 20:05:23,282 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:05:23,379 - mdm - INFO - Routes registered successfully
+2025-05-31 20:05:23,380 - mdm - INFO - Starting MDM service on port 5001
+2025-05-31 20:05:27,781 - mdm - INFO - Incoming request: GET /source/restcountries/extractions
+2025-05-31 20:05:27,782 - mdm - ERROR - Unhandled error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+2025-05-31 20:05:27,789 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:05:37,580 - mdm - INFO - Incoming request: GET /currencies
+2025-05-31 20:05:37,694 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:05:52,099 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:05:52,400 - mdm - INFO - Routes registered successfully
+2025-05-31 20:05:52,400 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:06:16,162 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:06:16,319 - mdm - INFO - Routes registered successfully
+2025-05-31 20:06:16,319 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:06:34,172 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:06:34,298 - mdm - INFO - Routes registered successfully
+2025-05-31 20:06:34,298 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:06:34,527 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:06:34,670 - mdm - INFO - Routes registered successfully
+2025-05-31 20:06:34,670 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:06:35,935 - mdm - INFO - Incoming request: GET /currencies
+2025-05-31 20:06:36,015 - mdm - INFO - Response status: 200 OK
+2025-05-31 20:07:31,518 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:07:31,983 - mdm - ERROR - Unhandled error: HTTPConnectionPool(host='dem-service', port=80): Max retries exceeded with url: /source/mdm-source/injections (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x1056e1a80>: Failed to resolve 'dem-service' ([Errno 8] nodename nor servname provided, or not known)"))
+2025-05-31 20:07:31,985 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:08:04,214 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:08:04,355 - mdm - INFO - Routes registered successfully
+2025-05-31 20:08:04,356 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:08:09,827 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:08:09,968 - mdm - INFO - Routes registered successfully
+2025-05-31 20:08:09,969 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:08:13,428 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:08:13,529 - mdm - INFO - Routes registered successfully
+2025-05-31 20:08:13,529 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:08:35,187 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:08:35,244 - mdm - ERROR - Failed to register routes: cannot import name 'INJECTIONS_ENDPOINT' from 'config.api.dem_config' (/Users/gabihert/Documents/Projects/faculdade/t1-es-II/mdm/config/api/dem_config.py)
+2025-05-31 20:10:43,366 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:10:43,475 - mdm - INFO - Routes registered successfully
+2025-05-31 20:10:43,475 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:10:43,667 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:10:43,770 - mdm - INFO - Routes registered successfully
+2025-05-31 20:10:43,770 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:10:47,853 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:10:47,898 - mdm - ERROR - Unhandled error: No injections found
+2025-05-31 20:10:47,899 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:10:52,141 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:10:52,163 - mdm - ERROR - Unhandled error: No injections found
+2025-05-31 20:10:52,164 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:10:53,166 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:10:53,184 - mdm - ERROR - Unhandled error: No injections found
+2025-05-31 20:10:53,185 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:11:29,953 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:11:30,080 - mdm - INFO - Routes registered successfully
+2025-05-31 20:11:30,080 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:11:34,542 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:11:34,678 - mdm - INFO - Routes registered successfully
+2025-05-31 20:11:34,678 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:11:45,377 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:11:45,513 - mdm - INFO - Routes registered successfully
+2025-05-31 20:11:45,513 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:11:48,896 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:11:49,007 - mdm - INFO - Routes registered successfully
+2025-05-31 20:11:49,008 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:11:51,307 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:11:51,425 - mdm - INFO - Routes registered successfully
+2025-05-31 20:11:51,425 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:11:57,900 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:11:58,037 - mdm - INFO - Routes registered successfully
+2025-05-31 20:11:58,037 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:07,464 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:07,721 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:07,721 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:10,072 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:10,177 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:10,177 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:13,671 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:13,783 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:13,783 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:15,180 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:15,300 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:15,300 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:16,598 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:16,697 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:16,697 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:19,049 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:19,264 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:19,265 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:21,585 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:21,688 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:21,688 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:23,206 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:23,341 - mdm - INFO - Routes registered successfully
+2025-05-31 20:12:23,342 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:12:47,065 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:12:47,124 - mdm - ERROR - Failed to register routes: name 'SOURCE_ID' is not defined
+2025-05-31 20:14:11,164 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:14:11,292 - mdm - INFO - Routes registered successfully
+2025-05-31 20:14:11,292 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:14:11,504 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:14:11,598 - mdm - INFO - Routes registered successfully
+2025-05-31 20:14:11,598 - mdm - INFO - Starting MDM service on port 5002
+2025-05-31 20:14:16,703 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:14:16,727 - mdm - ERROR - Unhandled error: 'id'
+2025-05-31 20:14:16,728 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:15:04,217 - mdm - INFO - Incoming request: GET /sync
+2025-05-31 20:15:04,227 - mdm - ERROR - Unhandled error: 'id'
+2025-05-31 20:15:04,228 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-05-31 20:16:43,342 - mdm - INFO - Initializing MDM service and registering routes...
+2025-05-31 20:16:43,467 - mdm - INFO - Routes registered successfully
+2025-05-31 20:16:43,467 - mdm - INFO - Starting MDM service on port 5002
