@@ -107,6 +107,8 @@ class ExtractionService:
                 raise ValueError("Extraction file not found")
                 
             latest_file = max(files, key=os.path.getctime)
+            # Get file timestamp once, will be used for all comparisons
+            file_timestamp = datetime.fromtimestamp(os.path.getctime(latest_file))
             
             with open(latest_file, 'r') as f:
                 data = json.load(f)
@@ -131,7 +133,6 @@ class ExtractionService:
                     country_id = existing_country["country_id"]
                     
                     # Update if our data is newer
-                    file_timestamp = datetime.fromtimestamp(os.path.getctime(latest_file))
                     country_updated_at = datetime.fromisoformat(existing_country["updated_at"])
                     
                     if file_timestamp > country_updated_at:
@@ -142,17 +143,17 @@ class ExtractionService:
                 for currency_data in currencies:
                     currency_data["country_id"] = country_id
                     
-                    response = requests.get(f"{ExtractionService.MDM_BASE_URL}/currencies/{currency_data['currency_id']}")
+                    response = requests.get(f"{ExtractionService.MDM_BASE_URL}/currencies/code/{currency_data['currency_code']}")
                     
                     if response.status_code == 404:
                         requests.post(f"{ExtractionService.MDM_BASE_URL}/currencies",
                                    json=currency_data)
                     else:
                         existing_currency = response.json()
-                        currency_id = existing_currency["currency_id"]
+                        currency_updated_at = datetime.fromisoformat(existing_currency["updated_at"])
                         
-                        if file_timestamp > datetime.fromisoformat(existing_currency["updated_at"]):
-                            requests.patch(f"{ExtractionService.MDM_BASE_URL}/currencies/{currency_id}",
+                        if file_timestamp > currency_updated_at:
+                            requests.patch(f"{ExtractionService.MDM_BASE_URL}/currencies/{existing_currency['currency_id']}",
                                        json=currency_data)
             
             load.status = "FINISHED"

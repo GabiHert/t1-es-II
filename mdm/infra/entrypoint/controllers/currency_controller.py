@@ -37,7 +37,9 @@ class CurrencyController:
             "currency_code": created_currency.currency_code,
             "currency_name": created_currency.currency_name,
             "currency_symbol": created_currency.currency_symbol,
-            "country_id": created_currency.country_id
+            "country_id": created_currency.country_id,
+            "created_at": created_currency.created_at.isoformat() if created_currency.created_at else None,
+            "updated_at": created_currency.updated_at.isoformat() if created_currency.updated_at else None
         }
 
     def get_all_currencies(self) -> List[Dict]:
@@ -48,7 +50,9 @@ class CurrencyController:
                 "currency_code": currency.currency_code,
                 "currency_name": currency.currency_name,
                 "currency_symbol": currency.currency_symbol,
-                "country_id": currency.country_id
+                "country_id": currency.country_id,
+                "created_at": currency.created_at.isoformat() if currency.created_at else None,
+                "updated_at": currency.updated_at.isoformat() if currency.updated_at else None
             }
             for currency in currencies
         ]
@@ -60,5 +64,19 @@ class CurrencyController:
             "currency_code": currency.currency_code,
             "currency_name": currency.currency_name,
             "currency_symbol": currency.currency_symbol,
-            "country_id": currency.country_id
+            "country_id": currency.country_id,
+            "created_at": currency.created_at.isoformat() if currency.created_at else None,
+            "updated_at": currency.updated_at.isoformat() if currency.updated_at else None
+        }
+
+    def get_currency_by_code(self, currency_code: str) -> Dict:
+        currency = self._get_currency_usecase.get_by_code(currency_code)
+        return {
+            "currency_id": currency.currency_id,
+            "currency_code": currency.currency_code,
+            "currency_name": currency.currency_name,
+            "currency_symbol": currency.currency_symbol,
+            "country_id": currency.country_id,
+            "created_at": currency.created_at.isoformat() if currency.created_at else None,
+            "updated_at": currency.updated_at.isoformat() if currency.updated_at else None
         } 

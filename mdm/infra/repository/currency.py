@@ -26,6 +26,8 @@ class CurrencyRepository(CreateCurrencyUseCase, GetCurrencyUseCase):
         self.db_session.refresh(currency_model)
 
         currency_entity.currency_id = currency_model.currency_id
+        currency_entity.created_at = currency_model.created_at
+        currency_entity.updated_at = currency_model.updated_at
         return currency_entity
 
     def get_all(self) -> List[CurrencyEntity]:
@@ -36,7 +38,9 @@ class CurrencyRepository(CreateCurrencyUseCase, GetCurrencyUseCase):
                 currency_code=currency.currency_code,
                 currency_name=currency.currency_name,
                 currency_symbol=currency.currency_symbol,
-                country_id=currency.country_id
+                country_id=currency.country_id,
+                created_at=currency.created_at,
+                updated_at=currency.updated_at
             )
             for currency in currencies
         ]
@@ -51,5 +55,22 @@ class CurrencyRepository(CreateCurrencyUseCase, GetCurrencyUseCase):
             currency_code=currency.currency_code,
             currency_name=currency.currency_name,
             currency_symbol=currency.currency_symbol,
-            country_id=currency.country_id
+            country_id=currency.country_id,
+            created_at=currency.created_at,
+            updated_at=currency.updated_at
+        )
+
+    def get_by_code(self, currency_code: str) -> CurrencyEntity:
+        currency = self.db_session.query(Currency).filter(Currency.currency_code == currency_code).first()
+        if currency is None:
+            raise NotFoundError(f"Currency with code {currency_code} not found")
+            
+        return CurrencyEntity(
+            currency_id=currency.currency_id,
+            currency_code=currency.currency_code,
+            currency_name=currency.currency_name,
+            currency_symbol=currency.currency_symbol,
+            country_id=currency.country_id,
+            created_at=currency.created_at,
+            updated_at=currency.updated_at
         )

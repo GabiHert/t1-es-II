@@ -56,3 +56,136 @@
 2025-05-31 20:23:04,698 - dem - INFO - Initializing DEM service...
 2025-05-31 20:23:04,736 - dem - INFO - Database initialized successfully
 2025-05-31 20:23:04,736 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 11:10:54,614 - dem - INFO - Initializing DEM service...
+2025-06-01 11:10:54,879 - dem - INFO - Database initialized successfully
+2025-06-01 11:10:54,880 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 11:10:55,516 - dem - INFO - Initializing DEM service...
+2025-06-01 11:10:55,539 - dem - INFO - Database initialized successfully
+2025-06-01 11:10:55,539 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 11:43:25,439 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 11:43:25,449 - dem - ERROR - Error getting extractions for source restcountries: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT extractions.extraction_id AS extractions_extraction_id, extractions.source AS extractions_source, extractions.created_at AS extractions_created_at, extractions.status AS extractions_status 
+FROM extractions 
+WHERE extractions.source = %(source_1)s]
+[parameters: {'source_1': 'restcountries'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-01 11:43:40,718 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 11:43:40,733 - dem - ERROR - Error getting extractions for source restcountries: (psycopg2.errors.UndefinedTable) relation "extractions" does not exist
+LINE 2: FROM extractions 
+             ^
+
+[SQL: SELECT extractions.extraction_id AS extractions_extraction_id, extractions.source AS extractions_source, extractions.created_at AS extractions_created_at, extractions.status AS extractions_status 
+FROM extractions 
+WHERE extractions.source = %(source_1)s]
+[parameters: {'source_1': 'restcountries'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-01 12:02:36,236 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:02:36,237 - dem - ERROR - Error getting extractions for source restcountries: (psycopg2.errors.UndefinedTable) relation "extractions" does not exist
+LINE 2: FROM extractions 
+             ^
+
+[SQL: SELECT extractions.extraction_id AS extractions_extraction_id, extractions.source AS extractions_source, extractions.created_at AS extractions_created_at, extractions.status AS extractions_status 
+FROM extractions 
+WHERE extractions.source = %(source_1)s]
+[parameters: {'source_1': 'restcountries'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-01 12:03:24,553 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-01 12:03:24,557 - dem - ERROR - Error creating extraction for source restcountries: (psycopg2.errors.UndefinedTable) relation "extractions" does not exist
+LINE 1: INSERT INTO extractions (extraction_id, source, created_at, ...
+                    ^
+
+[SQL: INSERT INTO extractions (extraction_id, source, created_at, status) VALUES (%(extraction_id)s::UUID, %(source)s, %(created_at)s, %(status)s)]
+[parameters: {'extraction_id': UUID('7e206264-4624-47e8-90ba-fa291f1d0eaf'), 'source': 'restcountries', 'created_at': datetime.datetime(2025, 6, 1, 15, 3, 24, 556261), 'status': 'PENDING'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-01 12:05:45,091 - dem - INFO - Initializing DEM service...
+2025-06-01 12:05:45,193 - dem - INFO - Database initialized successfully
+2025-06-01 12:05:45,194 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:16:18,155 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-01 12:16:18,157 - dem - ERROR - Error creating extraction for source restcountries: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: INSERT INTO extractions (extraction_id, source, created_at, status) VALUES (%(extraction_id)s::UUID, %(source)s, %(created_at)s, %(status)s)]
+[parameters: {'extraction_id': UUID('1ae113c2-3d6e-492d-be59-9fa69382116e'), 'source': 'restcountries', 'created_at': datetime.datetime(2025, 6, 1, 15, 16, 18, 157305), 'status': 'PENDING'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-01 12:17:53,569 - dem - INFO - Initializing DEM service...
+2025-06-01 12:17:53,597 - dem - INFO - Database initialized successfully
+2025-06-01 12:17:53,597 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:17:54,162 - dem - INFO - Initializing DEM service...
+2025-06-01 12:17:54,185 - dem - INFO - Database initialized successfully
+2025-06-01 12:17:54,186 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:18:00,126 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-01 12:18:01,805 - dem - INFO - Successfully created extraction 3b815fc6-32fe-4e01-8637-feec94e4a9ed for source: restcountries
+2025-06-01 12:18:13,033 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:18:13,036 - dem - INFO - Successfully retrieved 1 extractions for source: restcountries
+2025-06-01 12:18:13,040 - dem - INFO - Creating new load
+2025-06-01 12:18:13,040 - dem - INFO - Creating load for service: mdm, extraction_id: 3b815fc6-32fe-4e01-8637-feec94e4a9ed
+2025-06-01 12:18:13,050 - dem - INFO - Successfully created load d198d443-6500-4286-9de0-9f8d941c6a46
+2025-06-01 12:24:33,298 - dem - INFO - Initializing DEM service...
+2025-06-01 12:24:33,321 - dem - INFO - Database initialized successfully
+2025-06-01 12:24:33,321 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:24:33,884 - dem - INFO - Initializing DEM service...
+2025-06-01 12:24:33,908 - dem - INFO - Database initialized successfully
+2025-06-01 12:24:33,908 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:24:41,241 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-01 12:24:42,562 - dem - INFO - Successfully created extraction 660f7cae-fad0-4d54-b7cd-cb07d2311210 for source: restcountries
+2025-06-01 12:26:52,820 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:26:52,823 - dem - INFO - Successfully retrieved 2 extractions for source: restcountries
+2025-06-01 12:27:22,089 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:27:22,091 - dem - INFO - Successfully retrieved 2 extractions for source: restcountries
+2025-06-01 12:27:22,095 - dem - INFO - Creating new load
+2025-06-01 12:27:22,095 - dem - INFO - Creating load for service: mdm, extraction_id: 660f7cae-fad0-4d54-b7cd-cb07d2311210
+2025-06-01 12:27:22,105 - dem - INFO - Successfully created load 52673a03-cc71-4d6c-9b54-63505febbe6b
+2025-06-01 12:37:13,861 - dem - INFO - Initializing DEM service...
+2025-06-01 12:37:13,884 - dem - INFO - Database initialized successfully
+2025-06-01 12:37:13,884 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:38:27,825 - dem - INFO - Initializing DEM service...
+2025-06-01 12:38:27,849 - dem - INFO - Database initialized successfully
+2025-06-01 12:38:27,849 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:42:51,349 - dem - INFO - Initializing DEM service...
+2025-06-01 12:42:51,371 - dem - INFO - Database initialized successfully
+2025-06-01 12:42:51,372 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:47:38,841 - dem - INFO - Initializing DEM service...
+2025-06-01 12:47:38,869 - dem - INFO - Database initialized successfully
+2025-06-01 12:47:38,869 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:47:39,439 - dem - INFO - Initializing DEM service...
+2025-06-01 12:47:39,462 - dem - INFO - Database initialized successfully
+2025-06-01 12:47:39,462 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:48:01,814 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:48:01,826 - dem - INFO - Successfully retrieved 2 extractions for source: restcountries
+2025-06-01 12:48:05,872 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-01 12:48:07,318 - dem - INFO - Successfully created extraction 350915eb-4293-423c-96f0-b4af669b090d for source: restcountries
+2025-06-01 12:48:10,473 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:48:10,475 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 12:48:14,210 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:48:14,212 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 12:48:14,216 - dem - INFO - Creating new load
+2025-06-01 12:48:14,216 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 12:48:14,230 - dem - INFO - Successfully created load 4db7a1c0-68e1-458b-8c75-3307da0ed027
+2025-06-01 12:49:43,661 - dem - INFO - Initializing DEM service...
+2025-06-01 12:49:43,685 - dem - INFO - Database initialized successfully
+2025-06-01 12:49:43,685 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:51:07,680 - dem - INFO - Initializing DEM service...
+2025-06-01 12:51:07,705 - dem - INFO - Database initialized successfully
+2025-06-01 12:51:07,705 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:51:11,496 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:51:11,507 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 12:51:11,512 - dem - INFO - Creating new load
+2025-06-01 12:51:11,512 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 12:51:11,523 - dem - INFO - Successfully created load 950e9610-7b7d-43cd-b3e3-c921148e035b
+2025-06-01 12:56:38,028 - dem - INFO - Initializing DEM service...
+2025-06-01 12:56:38,051 - dem - INFO - Database initialized successfully
+2025-06-01 12:56:38,051 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:56:38,615 - dem - INFO - Initializing DEM service...
+2025-06-01 12:56:38,638 - dem - INFO - Database initialized successfully
+2025-06-01 12:56:38,638 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 12:56:43,335 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:56:43,346 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 12:56:43,350 - dem - INFO - Creating new load
+2025-06-01 12:56:43,351 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 12:56:43,361 - dem - INFO - Successfully created load 4b2b2e17-5665-430a-b397-c82e6badd1fc
+2025-06-01 12:57:14,667 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 12:57:14,669 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries

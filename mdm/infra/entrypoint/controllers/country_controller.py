@@ -39,7 +39,9 @@ class CountryController:
             "numeric_code": created_country.numeric_code,
             "capital_city": created_country.capital_city,
             "population": created_country.population,
-            "area": created_country.area
+            "area": created_country.area,
+            "created_at": created_country.created_at.isoformat() if created_country.created_at else None,
+            "updated_at": created_country.updated_at.isoformat() if created_country.updated_at else None
         }
 
     def get_all_countries(self) -> List[Dict]:
@@ -51,7 +53,9 @@ class CountryController:
                 "numeric_code": country.numeric_code,
                 "capital_city": country.capital_city,
                 "population": country.population,
-                "area": country.area
+                "area": country.area,
+                "created_at": country.created_at.isoformat() if country.created_at else None,
+                "updated_at": country.updated_at.isoformat() if country.updated_at else None
             }
             for country in countries
         ]
@@ -65,7 +69,9 @@ class CountryController:
                 "numeric_code": country.numeric_code,
                 "capital_city": country.capital_city,
                 "population": country.population,
-                "area": country.area
+                "area": country.area,
+                "created_at": country.created_at.isoformat() if country.created_at else None,
+                "updated_at": country.updated_at.isoformat() if country.updated_at else None
             }
         except ValueError as e:
             if "Country with id" in str(e) and "not found" in str(e):

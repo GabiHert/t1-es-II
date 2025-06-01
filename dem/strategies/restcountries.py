@@ -39,6 +39,7 @@ class RestCountriesStrategy:
         if data.get("currencies"):
             for code, currency_data in data["currencies"].items():
                 currency = {
+                    "currency_id": code,
                     "currency_code": code,
                     "currency_name": currency_data.get("name", ""),
                     "currency_symbol": currency_data.get("symbol", ""),

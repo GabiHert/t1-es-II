@@ -63,3 +63,9 @@ def get_currency_by_id(currency_id):
     currency = injector.currency_controller.get_currency_by_id(currency_id)
     return jsonify(currency)
 
+
+@server.route("/currencies/code/<currency_code>", methods=['GET'])
+def get_currency_by_code(currency_code):
+    currency = injector.currency_controller.get_currency_by_code(currency_code)
+    return jsonify(currency)
+

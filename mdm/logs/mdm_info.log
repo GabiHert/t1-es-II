@@ -236,3 +236,215 @@
 2025-05-31 20:39:59,342 - mdm - INFO - Response status: 201 CREATED
 2025-05-31 20:40:36,856 - mdm - INFO - Incoming request: GET /countries
 2025-05-31 20:40:36,867 - mdm - INFO - Response status: 200 OK
+2025-06-01 11:09:05,316 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 11:09:05,638 - mdm - INFO - Routes registered successfully
+2025-06-01 11:09:05,638 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 11:09:06,014 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 11:09:06,220 - mdm - INFO - Routes registered successfully
+2025-06-01 11:09:06,220 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 11:42:54,084 - mdm - INFO - Incoming request: GET /countries
+2025-06-01 11:42:54,116 - mdm - INFO - Response status: 200 OK
+2025-06-01 11:43:40,713 - mdm - INFO - Incoming request: GET /sync
+2025-06-01 11:43:40,735 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-06-01 12:18:13,030 - mdm - INFO - Incoming request: GET /sync
+2025-06-01 12:18:13,052 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:18:13,086 - mdm - INFO - Incoming request: GET /countries/496
+2025-06-01 12:18:13,090 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:18:13,093 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:18:13,102 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:24:30,464 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:24:30,672 - mdm - INFO - Routes registered successfully
+2025-06-01 12:24:30,672 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:24:31,071 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:24:31,309 - mdm - INFO - Routes registered successfully
+2025-06-01 12:24:31,309 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:27:22,085 - mdm - INFO - Incoming request: GET /sync
+2025-06-01 12:27:22,107 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:27:22,140 - mdm - INFO - Incoming request: GET /countries/496
+2025-06-01 12:27:22,171 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:27:22,175 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:27:22,182 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:47:35,983 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:47:36,223 - mdm - INFO - Routes registered successfully
+2025-06-01 12:47:36,223 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:47:36,630 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:47:36,864 - mdm - INFO - Routes registered successfully
+2025-06-01 12:47:36,864 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:48:14,205 - mdm - INFO - Incoming request: GET /sync
+2025-06-01 12:48:14,232 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:48:14,264 - mdm - INFO - Incoming request: GET /countries/496
+2025-06-01 12:48:14,297 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,301 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,310 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,313 - mdm - INFO - Incoming request: GET /currencies/code/MNT
+2025-06-01 12:48:14,317 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,320 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,329 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,332 - mdm - INFO - Incoming request: GET /countries/591
+2025-06-01 12:48:14,334 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,336 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,344 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,347 - mdm - INFO - Incoming request: GET /currencies/code/PAB
+2025-06-01 12:48:14,348 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,351 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,358 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,361 - mdm - INFO - Incoming request: GET /currencies/code/USD
+2025-06-01 12:48:14,363 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,366 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,372 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,375 - mdm - INFO - Incoming request: GET /countries/776
+2025-06-01 12:48:14,376 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,380 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,387 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,390 - mdm - INFO - Incoming request: GET /currencies/code/TOP
+2025-06-01 12:48:14,391 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,394 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,402 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,405 - mdm - INFO - Incoming request: GET /countries/174
+2025-06-01 12:48:14,406 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,409 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,416 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,419 - mdm - INFO - Incoming request: GET /currencies/code/KMF
+2025-06-01 12:48:14,420 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,423 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,432 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,435 - mdm - INFO - Incoming request: GET /countries/752
+2025-06-01 12:48:14,436 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,439 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,446 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,449 - mdm - INFO - Incoming request: GET /currencies/code/SEK
+2025-06-01 12:48:14,450 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,453 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,460 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,463 - mdm - INFO - Incoming request: GET /countries/324
+2025-06-01 12:48:14,464 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,467 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,474 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,477 - mdm - INFO - Incoming request: GET /currencies/code/GNF
+2025-06-01 12:48:14,478 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,481 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,489 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,492 - mdm - INFO - Incoming request: GET /countries/242
+2025-06-01 12:48:14,494 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,496 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,504 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,507 - mdm - INFO - Incoming request: GET /currencies/code/FJD
+2025-06-01 12:48:14,508 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,511 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,518 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,521 - mdm - INFO - Incoming request: GET /countries/682
+2025-06-01 12:48:14,522 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,525 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,532 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,535 - mdm - INFO - Incoming request: GET /currencies/code/SAR
+2025-06-01 12:48:14,536 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,539 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,546 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,549 - mdm - INFO - Incoming request: GET /countries/540
+2025-06-01 12:48:14,550 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,553 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,560 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,563 - mdm - INFO - Incoming request: GET /currencies/code/XPF
+2025-06-01 12:48:14,564 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,568 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,574 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,577 - mdm - INFO - Incoming request: GET /countries/132
+2025-06-01 12:48:14,579 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,582 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,589 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,591 - mdm - INFO - Incoming request: GET /currencies/code/CVE
+2025-06-01 12:48:14,593 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,596 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,603 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,606 - mdm - INFO - Incoming request: GET /countries/162
+2025-06-01 12:48:14,607 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,610 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,617 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,620 - mdm - INFO - Incoming request: GET /currencies/code/AUD
+2025-06-01 12:48:14,621 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,624 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,629 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,632 - mdm - INFO - Incoming request: GET /countries/710
+2025-06-01 12:48:14,633 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,636 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,643 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,647 - mdm - INFO - Incoming request: GET /currencies/code/ZAR
+2025-06-01 12:48:14,648 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,651 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,659 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,662 - mdm - INFO - Incoming request: GET /countries/364
+2025-06-01 12:48:14,664 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,667 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,674 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,677 - mdm - INFO - Incoming request: GET /currencies/code/IRR
+2025-06-01 12:48:14,678 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,681 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,693 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,696 - mdm - INFO - Incoming request: GET /countries/31
+2025-06-01 12:48:14,697 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,700 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,708 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,711 - mdm - INFO - Incoming request: GET /currencies/code/AZN
+2025-06-01 12:48:14,712 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,715 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,722 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,725 - mdm - INFO - Incoming request: GET /countries/524
+2025-06-01 12:48:14,726 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,729 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,736 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,739 - mdm - INFO - Incoming request: GET /currencies/code/NPR
+2025-06-01 12:48:14,740 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,743 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,750 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,753 - mdm - INFO - Incoming request: GET /countries/422
+2025-06-01 12:48:14,754 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,757 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,764 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,767 - mdm - INFO - Incoming request: GET /currencies/code/LBP
+2025-06-01 12:48:14,769 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,772 - mdm - INFO - Incoming request: POST /currencies
+2025-06-01 12:48:14,779 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,782 - mdm - INFO - Incoming request: GET /countries/86
+2025-06-01 12:48:14,783 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:48:14,786 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:48:14,794 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:48:14,797 - mdm - INFO - Incoming request: GET /currencies/code/USD
+2025-06-01 12:48:14,798 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:51:11,493 - mdm - INFO - Incoming request: GET /sync
+2025-06-01 12:51:11,525 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:51:11,561 - mdm - INFO - Incoming request: GET /countries/496
+2025-06-01 12:51:11,563 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:51:11,566 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:51:11,571 - mdm - INFO - Response status: 201 CREATED
+2025-06-01 12:51:11,574 - mdm - INFO - Incoming request: GET /currencies/code/MNT
+2025-06-01 12:51:11,576 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:52:20,640 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:52:20,875 - mdm - INFO - Routes registered successfully
+2025-06-01 12:52:20,876 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:52:37,416 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:52:37,635 - mdm - INFO - Routes registered successfully
+2025-06-01 12:52:37,635 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:56:27,190 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 12:56:27,439 - mdm - INFO - Routes registered successfully
+2025-06-01 12:56:27,439 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 12:56:43,330 - mdm - INFO - Incoming request: GET /sync
+2025-06-01 12:56:43,363 - mdm - INFO - Response status: 200 OK
+2025-06-01 12:56:43,399 - mdm - INFO - Incoming request: GET /countries/496
+2025-06-01 12:56:43,431 - mdm - INFO - Response status: 404 NOT FOUND
+2025-06-01 12:56:43,435 - mdm - INFO - Incoming request: POST /countries
+2025-06-01 12:56:43,444 - mdm - INFO - Response status: 500 INTERNAL SERVER ERROR
+2025-06-01 13:00:28,025 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 13:00:28,253 - mdm - INFO - Routes registered successfully
+2025-06-01 13:00:28,253 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 13:00:35,796 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 13:00:36,029 - mdm - INFO - Routes registered successfully
+2025-06-01 13:00:36,029 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 13:00:52,611 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 13:00:52,844 - mdm - INFO - Routes registered successfully
+2025-06-01 13:00:52,844 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 13:01:07,450 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 13:01:07,683 - mdm - INFO - Routes registered successfully
+2025-06-01 13:01:07,683 - mdm - INFO - Starting MDM service on port 5002
+2025-06-01 13:03:08,734 - mdm - INFO - Initializing MDM service and registering routes...
+2025-06-01 13:03:08,946 - mdm - INFO - Routes registered successfully
+2025-06-01 13:03:08,946 - mdm - INFO - Starting MDM service on port 5002

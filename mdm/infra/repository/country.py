@@ -26,6 +26,8 @@ class CountryRepository(CreateCountryUseCase, GetCountryUseCase):
         self.db_session.refresh(country_model)
 
         country_entity.country_id = country_model.country_id
+        country_entity.created_at = country_model.created_at
+        country_entity.updated_at = country_model.updated_at
         return country_entity
 
     def get_all(self) -> List[CountryEntity]:
@@ -37,7 +39,9 @@ class CountryRepository(CreateCountryUseCase, GetCountryUseCase):
                 numeric_code=country.numeric_code,
                 capital_city=country.capital_city,
                 population=country.population,
-                area=country.area
+                area=country.area,
+                created_at=country.created_at,
+                updated_at=country.updated_at
             )
             for country in countries
         ]
@@ -53,5 +57,7 @@ class CountryRepository(CreateCountryUseCase, GetCountryUseCase):
             numeric_code=country.numeric_code,
             capital_city=country.capital_city,
             population=country.population,
-            area=country.area
+            area=country.area,
+            created_at=country.created_at,
+            updated_at=country.updated_at
         )

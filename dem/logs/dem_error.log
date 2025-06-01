@@ -1,0 +1,41 @@
+2025-06-01 11:43:25,449 - dem - ERROR - Error getting extractions for source restcountries: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: SELECT extractions.extraction_id AS extractions_extraction_id, extractions.source AS extractions_source, extractions.created_at AS extractions_created_at, extractions.status AS extractions_status 
+FROM extractions 
+WHERE extractions.source = %(source_1)s]
+[parameters: {'source_1': 'restcountries'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-01 11:43:40,733 - dem - ERROR - Error getting extractions for source restcountries: (psycopg2.errors.UndefinedTable) relation "extractions" does not exist
+LINE 2: FROM extractions 
+             ^
+
+[SQL: SELECT extractions.extraction_id AS extractions_extraction_id, extractions.source AS extractions_source, extractions.created_at AS extractions_created_at, extractions.status AS extractions_status 
+FROM extractions 
+WHERE extractions.source = %(source_1)s]
+[parameters: {'source_1': 'restcountries'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-01 12:02:36,237 - dem - ERROR - Error getting extractions for source restcountries: (psycopg2.errors.UndefinedTable) relation "extractions" does not exist
+LINE 2: FROM extractions 
+             ^
+
+[SQL: SELECT extractions.extraction_id AS extractions_extraction_id, extractions.source AS extractions_source, extractions.created_at AS extractions_created_at, extractions.status AS extractions_status 
+FROM extractions 
+WHERE extractions.source = %(source_1)s]
+[parameters: {'source_1': 'restcountries'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-01 12:03:24,557 - dem - ERROR - Error creating extraction for source restcountries: (psycopg2.errors.UndefinedTable) relation "extractions" does not exist
+LINE 1: INSERT INTO extractions (extraction_id, source, created_at, ...
+                    ^
+
+[SQL: INSERT INTO extractions (extraction_id, source, created_at, status) VALUES (%(extraction_id)s::UUID, %(source)s, %(created_at)s, %(status)s)]
+[parameters: {'extraction_id': UUID('7e206264-4624-47e8-90ba-fa291f1d0eaf'), 'source': 'restcountries', 'created_at': datetime.datetime(2025, 6, 1, 15, 3, 24, 556261), 'status': 'PENDING'}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-01 12:16:18,157 - dem - ERROR - Error creating extraction for source restcountries: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: INSERT INTO extractions (extraction_id, source, created_at, status) VALUES (%(extraction_id)s::UUID, %(source)s, %(created_at)s, %(status)s)]
+[parameters: {'extraction_id': UUID('1ae113c2-3d6e-492d-be59-9fa69382116e'), 'source': 'restcountries', 'created_at': datetime.datetime(2025, 6, 1, 15, 16, 18, 157305), 'status': 'PENDING'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

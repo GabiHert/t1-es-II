@@ -11,4 +11,8 @@ class GetCurrencyUseCase(Protocol):
 
     @abstractmethod
     def get_by_id(self, currency_id: int) -> CurrencyEntity:
+        pass
+
+    @abstractmethod
+    def get_by_code(self, currency_code: str) -> CurrencyEntity:
         pass 
