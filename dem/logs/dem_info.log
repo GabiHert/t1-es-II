@@ -189,3 +189,68 @@ LINE 1: INSERT INTO extractions (extraction_id, source, created_at, ...
 2025-06-01 12:56:43,361 - dem - INFO - Successfully created load 4b2b2e17-5665-430a-b397-c82e6badd1fc
 2025-06-01 12:57:14,667 - dem - INFO - Getting extractions for source: restcountries
 2025-06-01 12:57:14,669 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:12:26,609 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:12:26,612 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:12:26,616 - dem - INFO - Creating new load
+2025-06-01 13:12:26,617 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:12:26,623 - dem - INFO - Successfully created load 974b62d2-973f-4248-924c-908ca88f63d3
+2025-06-01 13:21:38,115 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:21:38,118 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:21:38,121 - dem - INFO - Creating new load
+2025-06-01 13:21:38,122 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:21:38,128 - dem - INFO - Successfully created load f39a7c5c-1046-4446-ab76-2c8a27eab844
+2025-06-01 13:34:50,280 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:34:50,282 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:34:50,286 - dem - INFO - Creating new load
+2025-06-01 13:34:50,286 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:34:50,342 - dem - INFO - Successfully created load 7ee3c655-afd8-42d4-9c3e-427659d0cc8f
+2025-06-01 13:39:09,128 - dem - INFO - Initializing DEM service...
+2025-06-01 13:39:09,154 - dem - INFO - Database initialized successfully
+2025-06-01 13:39:09,154 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 13:46:02,317 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:46:02,329 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:46:02,333 - dem - INFO - Creating new load
+2025-06-01 13:46:02,334 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:46:02,344 - dem - INFO - Successfully created load f048d9e5-1a53-4932-9dba-d7621dac13c9
+2025-06-01 13:46:52,650 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:46:52,652 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:46:52,656 - dem - INFO - Creating new load
+2025-06-01 13:46:52,656 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:46:52,663 - dem - INFO - Successfully created load 7a2dc941-a5b6-49e2-8682-43ad98f97088
+2025-06-01 13:47:54,932 - dem - INFO - Initializing DEM service...
+2025-06-01 13:47:54,934 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-01 13:48:00,646 - dem - INFO - Initializing DEM service...
+2025-06-01 13:48:00,648 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-01 13:48:20,372 - dem - INFO - Initializing DEM service...
+2025-06-01 13:48:20,373 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-01 13:49:01,858 - dem - INFO - Initializing DEM service...
+2025-06-01 13:49:01,886 - dem - INFO - Database initialized successfully
+2025-06-01 13:49:01,886 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 13:49:02,454 - dem - INFO - Initializing DEM service...
+2025-06-01 13:49:02,477 - dem - INFO - Database initialized successfully
+2025-06-01 13:49:02,477 - dem - INFO - Starting DEM service on port 5001
+2025-06-01 13:49:17,513 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:49:17,525 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:49:17,530 - dem - INFO - Creating new load
+2025-06-01 13:49:17,530 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:49:17,542 - dem - INFO - Successfully created load 1e793f52-455f-4b90-94ed-0656c8c4c8cf
+2025-06-01 13:49:49,915 - dem - INFO - Getting extractions for source: restcountries
+2025-06-01 13:49:49,917 - dem - INFO - Successfully retrieved 3 extractions for source: restcountries
+2025-06-01 13:49:49,921 - dem - INFO - Creating new load
+2025-06-01 13:49:49,922 - dem - INFO - Creating load for service: mdm, extraction_id: 350915eb-4293-423c-96f0-b4af669b090d
+2025-06-01 13:49:49,930 - dem - INFO - Successfully created load bffc3b6c-f295-4be5-8889-e9ca3b69576c

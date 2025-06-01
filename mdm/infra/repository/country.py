@@ -61,3 +61,19 @@ class CountryRepository(CreateCountryUseCase, GetCountryUseCase):
             created_at=country.created_at,
             updated_at=country.updated_at
         )
+
+    def get_by_numeric_code(self, numeric_code: int) -> CountryEntity:
+        country = self.db_session.query(Country).filter(Country.numeric_code == numeric_code).first()
+        if country is None:
+            raise ValueError(f"Country with numeric code {numeric_code} not found")
+            
+        return CountryEntity(
+            country_id=country.country_id,
+            country_name=country.country_name,
+            numeric_code=country.numeric_code,
+            capital_city=country.capital_city,
+            population=country.population,
+            area=country.area,
+            created_at=country.created_at,
+            updated_at=country.updated_at
+        )

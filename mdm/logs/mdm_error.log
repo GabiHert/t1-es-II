@@ -16,3 +16,4 @@
 2025-05-31 20:35:09,088 - mdm - ERROR - Unhandled error: Country with id 123 not found
 2025-05-31 20:37:11,128 - mdm - ERROR - Unhandled error: Country with id 123 not found
 2025-05-31 20:37:23,475 - mdm - ERROR - Unhandled error: Country with id 123 not found
+2025-06-01 13:37:55,840 - mdm - ERROR - Failed to register routes: Can't instantiate abstract class CountryRepository with abstract method get_by_numeric_code

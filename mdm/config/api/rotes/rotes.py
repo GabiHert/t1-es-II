@@ -45,6 +45,12 @@ def get_country_by_id(country_id):
     return jsonify(country)
 
 
+@server.route("/countries/numeric/<int:numeric_code>", methods=['GET'])
+def get_country_by_numeric_code(numeric_code):
+    country = injector.country_controller.get_country_by_numeric_code(numeric_code)
+    return jsonify(country)
+
+
 @server.route("/currencies", methods=['GET'])
 def get_currencies():
     currencies = injector.currency_controller.get_all_currencies()

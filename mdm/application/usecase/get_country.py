@@ -11,4 +11,8 @@ class GetCountryUseCase(Protocol):
 
     @abstractmethod
     def get_by_id(self, country_id: int) -> CountryEntity:
+        pass
+
+    @abstractmethod
+    def get_by_numeric_code(self, numeric_code: int) -> CountryEntity:
         pass 

@@ -119,8 +119,8 @@ class ExtractionService:
             for country_data in data:
                 country, currencies = strategy.transform_for_mdm(country_data)
                 
-                # Check if country exists
-                response = requests.get(f"{ExtractionService.MDM_BASE_URL}/countries/{country['numeric_code']}")
+                # Check if country exists using numeric code
+                response = requests.get(f"{ExtractionService.MDM_BASE_URL}/countries/numeric/{country['numeric_code']}")
                 
                 if response.status_code == 404:
                     # Create new country

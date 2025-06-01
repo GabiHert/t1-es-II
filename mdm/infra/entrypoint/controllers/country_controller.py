@@ -77,3 +77,21 @@ class CountryController:
             if "Country with id" in str(e) and "not found" in str(e):
                 raise CountryNotFoundError(str(e))
             raise InvalidFieldError(str(e))
+
+    def get_country_by_numeric_code(self, numeric_code: int) -> Dict:
+        try:
+            country = self._get_country_usecase.get_by_numeric_code(numeric_code)
+            return {
+                "country_id": country.country_id,
+                "country_name": country.country_name,
+                "numeric_code": country.numeric_code,
+                "capital_city": country.capital_city,
+                "population": country.population,
+                "area": country.area,
+                "created_at": country.created_at.isoformat() if country.created_at else None,
+                "updated_at": country.updated_at.isoformat() if country.updated_at else None
+            }
+        except ValueError as e:
+            if "Country with numeric code" in str(e) and "not found" in str(e):
+                raise CountryNotFoundError(str(e))
+            raise InvalidFieldError(str(e))
