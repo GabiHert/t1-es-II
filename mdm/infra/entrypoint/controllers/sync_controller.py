@@ -1,5 +1,5 @@
 from typing import Dict
-from application.usecase.sync_data import SyncDataUseCase
+from application import SyncDataUseCase
 
 
 class SyncController:
@@ -10,4 +10,7 @@ class SyncController:
         """
         Triggers the sync process and returns the extraction response.
         """
-        return self._sync_data_usecase.sync() 
+        return self._sync_data_usecase.sync()
+
+# Create a default instance for Flask routes
+sync_controller = SyncController(None)  # Will be properly initialized by the injector 

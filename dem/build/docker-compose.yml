@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  dem_postgres:
+    container_name: dem_postgres
+    image: postgres:15
+    environment:
+      POSTGRES_DB: dem_database
+      POSTGRES_USER: dem_user
+      POSTGRES_PASSWORD: dem_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - dem_postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dem_user -d dem_database"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # dem:
+  #   build:
+  #     context: ..
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     DATABASE_URL: postgresql://dem_user:dem_password@dem_postgres:5432/dem_database
+  #   ports:
+  #     - "5001:5001"
+  #   volumes:
+  #     - ../extractions:/app/extractions
+  #   depends_on:
+  #     dem_postgres:
+  #       condition: service_healthy
+
+volumes:
+  dem_postgres_data: 

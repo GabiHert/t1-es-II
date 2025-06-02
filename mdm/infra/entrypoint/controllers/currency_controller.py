@@ -1,9 +1,12 @@
 from typing import Dict, List
 
-from application.domain.entity.currency import CurrencyEntity
-from application.errors.error_handler import MissingFieldError, InvalidFieldError
-from application.usecase.create_currency import CreateCurrencyUseCase
-from application.usecase.get_currency import GetCurrencyUseCase
+from application import (
+    CurrencyEntity,
+    MissingFieldError,
+    InvalidFieldError,
+    CreateCurrencyUseCase,
+    GetCurrencyUseCase
+)
 
 
 class CurrencyController:
@@ -79,4 +82,7 @@ class CurrencyController:
             "country_id": currency.country_id,
             "created_at": currency.created_at.isoformat() if currency.created_at else None,
             "updated_at": currency.updated_at.isoformat() if currency.updated_at else None
-        } 
+        }
+
+# Create a default instance for Flask routes
+currency_controller = CurrencyController(None, None)  # Will be properly initialized by the injector 

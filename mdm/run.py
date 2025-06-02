@@ -1,4 +1,4 @@
-from config.api.server.server import server
+from config import server
 import logging
 
 logger = logging.getLogger('mdm')

@@ -357,3 +357,97 @@ connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection re
 2025-06-02 14:17:31,520 - dem - INFO - Successfully created load a514b3e4-403f-4b07-847a-0c6d5c8136c1
 2025-06-02 14:17:50,645 - dem - INFO - Getting extractions for source: restcountries
 2025-06-02 14:17:50,647 - dem - INFO - Successfully retrieved 6 extractions for source: restcountries
+2025-06-02 15:12:59,117 - dem - INFO - Initializing DEM service...
+2025-06-02 15:12:59,142 - dem - INFO - Database initialized successfully
+2025-06-02 15:12:59,142 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:12:59,809 - dem - INFO - Initializing DEM service...
+2025-06-02 15:12:59,834 - dem - INFO - Database initialized successfully
+2025-06-02 15:12:59,835 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:14:08,075 - dem - INFO - Initializing DEM service...
+2025-06-02 15:14:08,099 - dem - INFO - Database initialized successfully
+2025-06-02 15:14:08,099 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:14:08,739 - dem - INFO - Initializing DEM service...
+2025-06-02 15:14:08,763 - dem - INFO - Database initialized successfully
+2025-06-02 15:14:08,763 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:14:53,350 - dem - INFO - Getting extractions for source: restcountries
+2025-06-02 15:14:53,361 - dem - INFO - Successfully retrieved 6 extractions for source: restcountries
+2025-06-02 15:16:08,214 - dem - INFO - Initializing DEM service...
+2025-06-02 15:16:08,238 - dem - INFO - Database initialized successfully
+2025-06-02 15:16:08,239 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:16:08,812 - dem - INFO - Initializing DEM service...
+2025-06-02 15:16:08,836 - dem - INFO - Database initialized successfully
+2025-06-02 15:16:08,836 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:16:25,298 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-02 15:16:26,714 - dem - INFO - Successfully created extraction c8106605-6f41-45d9-ba3c-7254a778d5bb for source: restcountries
+2025-06-02 15:16:30,762 - dem - INFO - Getting all loads
+2025-06-02 15:16:30,766 - dem - INFO - Successfully retrieved 21 loads
+2025-06-02 15:16:37,106 - dem - INFO - Getting extractions for source: restcountries
+2025-06-02 15:16:37,109 - dem - INFO - Successfully retrieved 7 extractions for source: restcountries
+2025-06-02 15:16:37,114 - dem - INFO - Creating new load
+2025-06-02 15:16:37,114 - dem - INFO - Creating load for service: mdm, extraction_id: c8106605-6f41-45d9-ba3c-7254a778d5bb
+2025-06-02 15:16:37,128 - dem - INFO - Successfully created load 9a2db8bb-84a3-4ffc-b2e2-b2542790d091
+2025-06-02 15:25:35,943 - dem - INFO - Initializing DEM service...
+2025-06-02 15:25:35,970 - dem - INFO - Database initialized successfully
+2025-06-02 15:25:35,971 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:25:36,545 - dem - INFO - Initializing DEM service...
+2025-06-02 15:25:36,568 - dem - INFO - Database initialized successfully
+2025-06-02 15:25:36,569 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:26:04,548 - dem - INFO - Getting all loads
+2025-06-02 15:26:04,558 - dem - INFO - Successfully retrieved 0 loads
+2025-06-02 15:33:29,137 - dem - INFO - Initializing DEM service...
+2025-06-02 15:33:29,164 - dem - INFO - Database initialized successfully
+2025-06-02 15:33:29,164 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:33:29,726 - dem - INFO - Initializing DEM service...
+2025-06-02 15:33:29,749 - dem - INFO - Database initialized successfully
+2025-06-02 15:33:29,749 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 15:33:33,059 - dem - INFO - Getting all loads
+2025-06-02 15:33:33,070 - dem - INFO - Successfully retrieved 0 loads
+2025-06-02 16:58:46,337 - dem - INFO - Initializing DEM service...
+2025-06-02 16:58:46,338 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 16:58:46,338 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:03,483 - dem - INFO - Initializing DEM service...
+2025-06-02 17:10:03,495 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:03,496 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:43,934 - dem - INFO - Initializing DEM service...
+2025-06-02 17:10:43,946 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:43,946 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:12:48,519 - dem - INFO - Initializing DEM service...
+2025-06-02 17:12:48,531 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:12:48,531 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:15:58,425 - dem - INFO - Initializing DEM service...
+2025-06-02 17:15:58,449 - dem - INFO - Database initialized successfully
+2025-06-02 17:15:58,449 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 17:15:59,006 - dem - INFO - Initializing DEM service...
+2025-06-02 17:15:59,029 - dem - INFO - Database initialized successfully
+2025-06-02 17:15:59,030 - dem - INFO - Starting DEM service on port 5001
+2025-06-02 17:16:02,449 - dem - INFO - Getting all loads
+2025-06-02 17:16:02,460 - dem - INFO - Successfully retrieved 0 loads
+2025-06-02 17:16:21,125 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-02 17:16:22,562 - dem - INFO - Successfully created extraction 5d5ebb3f-a69b-4ce5-ad1e-b7d33a6d2e0a for source: restcountries
+2025-06-02 17:16:26,167 - dem - INFO - Getting extractions for source: restcountries
+2025-06-02 17:16:26,170 - dem - INFO - Successfully retrieved 1 extractions for source: restcountries
+2025-06-02 17:16:26,174 - dem - INFO - Creating new load
+2025-06-02 17:16:26,174 - dem - INFO - Creating load for service: mdm, extraction_id: 5d5ebb3f-a69b-4ce5-ad1e-b7d33a6d2e0a
+2025-06-02 17:16:26,184 - dem - INFO - Successfully created load 01a8e99e-db49-4c7b-9e53-90eb164c5d77

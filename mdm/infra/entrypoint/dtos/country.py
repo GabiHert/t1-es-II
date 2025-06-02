@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field, confloat, conint, constr
 from application.domain.entity.country import CountryEntity
 
 
-class CountryDto(BaseModel):
+class CountryDTO(BaseModel):
     country_name: Annotated[str, Field(min_length=2, strip_whitespace=True)]
     numeric_code: Annotated[int, Field(ge=1)]
     capital_city: Annotated[str, Field(min_length=2, strip_whitespace=True)]
@@ -21,7 +21,8 @@ class CountryDto(BaseModel):
             area=self.area
         )
 
-    def from_entity(cls, entity: CountryEntity) -> "CountryDto":
+    @classmethod
+    def from_entity(cls, entity: CountryEntity) -> "CountryDTO":
         return cls(
             country_name=entity.country_name,
             numeric_code=entity.numeric_code,

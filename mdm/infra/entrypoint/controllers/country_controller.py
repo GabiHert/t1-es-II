@@ -1,9 +1,13 @@
 from typing import Dict, List
 
-from application.domain.entity.country import CountryEntity
-from application.errors.error_handler import MissingFieldError, InvalidFieldError, CountryNotFoundError
-from application.usecase.create_country import CreateCountryUseCase
-from application.usecase.get_country import GetCountryUseCase
+from application import (
+    CountryEntity,
+    MissingFieldError,
+    InvalidFieldError,
+    CountryNotFoundError,
+    CreateCountryUseCase,
+    GetCountryUseCase
+)
 
 
 class CountryController:
@@ -95,3 +99,6 @@ class CountryController:
             if "Country with numeric code" in str(e) and "not found" in str(e):
                 raise CountryNotFoundError(str(e))
             raise InvalidFieldError(str(e))
+
+# Create a default instance for Flask routes
+country_controller = CountryController(None, None)  # Will be properly initialized by the injector

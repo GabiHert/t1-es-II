@@ -17,3 +17,12 @@
 2025-05-31 20:37:11,128 - mdm - ERROR - Unhandled error: Country with id 123 not found
 2025-05-31 20:37:23,475 - mdm - ERROR - Unhandled error: Country with id 123 not found
 2025-06-01 13:37:55,840 - mdm - ERROR - Failed to register routes: Can't instantiate abstract class CountryRepository with abstract method get_by_numeric_code
+2025-06-02 14:43:25,442 - mdm - ERROR - Failed to register routes: cannot import name 'country_controller' from 'infra.entrypoint.controllers.country_controller' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/controllers/country_controller.py)
+2025-06-02 14:53:25,251 - mdm - ERROR - Failed to register routes: cannot import name 'server' from partially initialized module 'config' (most likely due to a circular import) (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/config/__init__.py)
+2025-06-02 14:54:06,522 - mdm - ERROR - Failed to register routes: cannot import name 'server' from partially initialized module 'config' (most likely due to a circular import) (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/config/__init__.py)
+2025-06-02 14:54:48,794 - mdm - ERROR - Failed to register routes: cannot import name 'country_controller' from 'infra.entrypoint.controllers.country_controller' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/controllers/country_controller.py)
+2025-06-02 14:55:10,478 - mdm - ERROR - Failed to register routes: cannot import name 'country_controller' from 'infra.entrypoint.controllers.country_controller' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/controllers/country_controller.py)
+2025-06-02 14:56:46,304 - mdm - ERROR - Failed to register routes: cannot import name 'CountryDTO' from 'infra.entrypoint.dtos.country' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/dtos/country.py)
+2025-06-02 14:57:12,219 - mdm - ERROR - Failed to register routes: cannot import name 'CountryDTO' from 'infra.entrypoint.dtos.country' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/dtos/country.py)
+2025-06-02 14:58:09,029 - mdm - ERROR - Failed to register routes: cannot import name 'CountryDTO' from 'infra.entrypoint.dtos.country' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/dtos/country.py)
+2025-06-02 14:59:41,040 - mdm - ERROR - Failed to register routes: cannot import name 'rotes' from 'config.api.rotes.rotes' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/config/api/rotes/rotes.py)

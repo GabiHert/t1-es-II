@@ -57,3 +57,33 @@ connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection re
 	Is the server running on that host and accepting TCP/IP connections?
 
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 16:58:46,338 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 16:58:46,338 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:03,495 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:03,496 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:43,946 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:10:43,946 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:12:48,531 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-02 17:12:48,531 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: FATAL:  password authentication failed for user "postgres"
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
