@@ -11,7 +11,7 @@ class ExtractionService:
         "restcountries": RestCountriesStrategy
     }
     
-    MDM_BASE_URL = "http://localhost:8080"
+    MDM_BASE_URL = "http://localhost:5002"
     
     @staticmethod
     def get_extractions_by_source(source):
