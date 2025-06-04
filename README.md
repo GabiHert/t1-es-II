@@ -29,34 +29,25 @@ Manages the master data for countries and currencies. Features:
 
 ### Using Docker (Recommended)
 
-1. Clone the repository and navigate to the project root:
+1. Start all services:
 ```bash
-git clone <repository-url>
-cd <project-directory>
+make up
 ```
 
-2. Build and start all services:
+2. View service logs:
 ```bash
-# For DEM service
-cd dem
-make docker_build
-make docker_up
-
-# For MDM service
-cd ../mdm
-make docker_build
-make docker_up
+make logs
 ```
 
 3. Stop the services:
 ```bash
-# In each service directory
-make docker_down
+make down
 ```
 
-Additional commands:
-- `make docker_logs`: View service logs
-- `make docker_clean`: Clean up everything, including volumes
+4. Clean up everything (including volumes):
+```bash
+make clean
+```
 
 ### Manual Setup
 

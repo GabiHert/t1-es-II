@@ -1,0 +1,248 @@
+openapi: 3.0.0
+info:
+  title: DEM (Data Extraction and Management) API
+  description: |
+    API for managing data extractions from external sources and loading them into the MDM service.
+    This service is responsible for extracting country and currency data from various sources.
+  version: 1.0.0
+  contact:
+    name: DEM Support
+
+servers:
+  - url: http://localhost:5001
+    description: Local Development Server
+
+tags:
+  - name: Health
+    description: Health check endpoints
+  - name: Extractions
+    description: Manage data extractions from sources
+  - name: Loads
+    description: Manage data loading processes
+
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      summary: Check service health
+      description: Verifies the health of the service and its database connection
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "healthy"
+                  database:
+                    type: string
+                    example: "connected"
+                  service:
+                    type: string
+                    example: "dem"
+        '500':
+          description: Service is unhealthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "unhealthy"
+                  database:
+                    type: string
+                    example: "disconnected"
+                  service:
+                    type: string
+                    example: "dem"
+                  error:
+                    type: string
+                    example: "Database connection failed"
+
+  /source/{source}/extractions:
+    get:
+      tags:
+        - Extractions
+      summary: List extractions by source
+      description: Retrieves all extractions for a specific data source
+      parameters:
+        - name: source
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The source identifier (e.g., 'restcountries')
+          example: "restcountries"
+      responses:
+        '200':
+          description: List of extractions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Extraction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+    
+    post:
+      tags:
+        - Extractions
+      summary: Create new extraction
+      description: Initiates a new data extraction process for the specified source
+      parameters:
+        - name: source
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The source to extract data from
+          example: "restcountries"
+      responses:
+        '201':
+          description: Extraction created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Extraction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /extractions/{extraction_id}:
+    post:
+      tags:
+        - Extractions
+      summary: Reprocess extraction
+      description: Reprocesses an existing extraction
+      parameters:
+        - name: extraction_id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+          description: The ID of the extraction to reprocess
+      responses:
+        '201':
+          description: Reprocessing initiated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Load'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /loads:
+    get:
+      tags:
+        - Loads
+      summary: List all loads
+      description: Retrieves all data load processes
+      responses:
+        '200':
+          description: List of loads
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Load'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+    
+    post:
+      tags:
+        - Loads
+      summary: Create new load
+      description: Creates a new data load process
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - service
+                - extraction_id
+              properties:
+                service:
+                  type: string
+                  description: Target service for the load
+                  example: "mdm"
+                extraction_id:
+                  type: string
+                  format: uuid
+                  description: ID of the extraction to load
+      responses:
+        '201':
+          description: Load created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Load'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+components:
+  schemas:
+    Extraction:
+      type: object
+      properties:
+        extraction_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        source:
+          type: string
+          example: "restcountries"
+        created_at:
+          type: string
+          format: date-time
+          example: "2024-03-20T15:30:00Z"
+        status:
+          type: string
+          enum: [pending, processing, completed, failed]
+          example: "completed"
+
+    Load:
+      type: object
+      properties:
+        load_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174001"
+        extraction_id:
+          type: string
+          format: uuid
+          example: "123e4567-e89b-12d3-a456-426614174000"
+        service:
+          type: string
+          example: "mdm"
+        source:
+          type: string
+          example: "restcountries"
+        created_at:
+          type: string
+          format: date-time
+          example: "2024-03-20T15:35:00Z"
+        status:
+          type: string
+          enum: [pending, processing, completed, failed]
+          example: "completed"
+
+  responses:
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+                example: "Invalid request parameters" 
