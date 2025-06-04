@@ -1,1 +1,1 @@
-DEM_ENDPOINT = "http://localhost:5001"  # Replace with actual DEM service endpoint
+DEM_ENDPOINT = "http://dem:5001"  # Replace with actual DEM service endpoint

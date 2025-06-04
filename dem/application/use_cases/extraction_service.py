@@ -5,13 +5,17 @@ from infra.repositories.models import Extraction, Load
 from application.strategies.restcountries import RestCountriesStrategy
 from config.database import db_session
 import requests
+import logging
+
+log = logging.getLogger(__name__)
+
 
 class ExtractionService:
     STRATEGIES = {
         "restcountries": RestCountriesStrategy
     }
     
-    MDM_BASE_URL = "http://localhost:5002"
+    MDM_BASE_URL = "http://mdm:5002"
     
     @staticmethod
     def get_extractions_by_source(source):
@@ -181,7 +185,7 @@ class ExtractionService:
             
         except Exception as e:
             load.status = "ERROR"
-            print(f"Error processing load {load_id}: {str(e)}")
+            log.error(f"Error processing load {load_id}: {str(e)}")
             
         finally:
             db_session.commit() 

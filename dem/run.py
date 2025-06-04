@@ -4,8 +4,7 @@ import logging
 
 # Configure logging
 logging.basicConfig(
-    filename='logs/dem.log',
-    level=logging.INFO,
+    level=logging.DEBUG,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 

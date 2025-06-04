@@ -92,12 +92,10 @@ python run.py
 ### DEM Service
 - API: http://localhost:5001
 - PostgreSQL: localhost:5433
-- Swagger Documentation: http://localhost:5001/swagger
 
 ### MDM Service
 - API: http://localhost:5002
 - PostgreSQL: localhost:5432
-- Swagger Documentation: http://localhost:5002/swagger
 
 ## API Documentation
 

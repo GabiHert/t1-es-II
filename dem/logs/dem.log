@@ -32,3 +32,146 @@
 2025-06-04 22:23:34,724 - dem - INFO - Creating new extraction for source: restcountries
 2025-06-04 22:23:36,131 - dem - INFO - Successfully created extraction c5518922-c1ae-4ae3-89fd-5a36d3fecc56 for source: restcountries
 2025-06-04 22:23:36,132 - werkzeug - INFO - 192.168.65.1 - - [04/Jun/2025 22:23:36] "[35m[1mPOST /source/restcountries/extractions HTTP/1.1[0m" 201 -
+2025-06-04 22:23:59,900 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:23:59] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:24:29,989 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:24:29] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:25:00,069 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:25:00] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:25:30,142 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:25:30] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:26:00,227 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:26:00] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:26:30,304 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:26:30] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:27:00,388 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:27:00] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:27:30,469 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:27:30] "GET /health HTTP/1.1" 200 -
+2025-06-04 19:27:56,431 - dem - INFO - Initializing DEM service...
+2025-06-04 19:27:56,571 - dem - INFO - Database initialized successfully
+2025-06-04 19:27:56,573 - dem - INFO - Routes registered successfully
+2025-06-04 19:27:56,573 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:28:00,557 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:28:00] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:28:00,896 - werkzeug - INFO - 192.168.65.1 - - [04/Jun/2025 22:28:00] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:28:30,638 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:28:30] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:29:44,708 - dem - INFO - Initializing DEM service...
+2025-06-04 22:29:44,769 - dem - INFO - Database initialized successfully
+2025-06-04 22:29:44,770 - dem - INFO - Routes registered successfully
+2025-06-04 22:29:44,770 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:29:44,791 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.5:5001
+2025-06-04 22:29:44,791 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 22:29:44,791 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 22:29:44,986 - dem - INFO - Initializing DEM service...
+2025-06-04 22:29:45,032 - dem - INFO - Database initialized successfully
+2025-06-04 22:29:45,033 - dem - INFO - Routes registered successfully
+2025-06-04 22:29:45,033 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:29:45,038 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 22:29:45,039 - werkzeug - INFO -  * Debugger PIN: 114-027-423
+2025-06-04 22:29:49,576 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:29:49] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:29:55,824 - dem - INFO - Getting extractions for source: restcountries
+2025-06-04 22:29:55,842 - dem - INFO - Successfully retrieved 0 extractions for source: restcountries
+2025-06-04 22:29:55,842 - werkzeug - INFO - 172.18.0.4 - - [04/Jun/2025 22:29:55] "GET /source/restcountries/extractions HTTP/1.1" 200 -
+2025-06-04 22:30:13,340 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-04 22:30:14,749 - dem - INFO - Successfully created extraction 1e5b5d9d-7a35-4395-9860-8685a4a0d143 for source: restcountries
+2025-06-04 22:30:14,749 - werkzeug - INFO - 192.168.65.1 - - [04/Jun/2025 22:30:14] "[35m[1mPOST /source/restcountries/extractions HTTP/1.1[0m" 201 -
+2025-06-04 22:30:17,256 - dem - INFO - Getting extractions for source: restcountries
+2025-06-04 22:30:17,259 - dem - INFO - Successfully retrieved 1 extractions for source: restcountries
+2025-06-04 22:30:17,260 - werkzeug - INFO - 172.18.0.4 - - [04/Jun/2025 22:30:17] "GET /source/restcountries/extractions HTTP/1.1" 200 -
+2025-06-04 22:30:17,263 - dem - INFO - Creating new load
+2025-06-04 22:30:17,263 - dem - INFO - Creating load for service: mdm, extraction_id: 1e5b5d9d-7a35-4395-9860-8685a4a0d143
+2025-06-04 22:30:17,276 - dem - INFO - Successfully created load f567f952-15d0-498c-b1cf-ecc5920f6b1f
+2025-06-04 22:30:17,277 - werkzeug - INFO - 172.18.0.4 - - [04/Jun/2025 22:30:17] "[35m[1mPOST /loads HTTP/1.1[0m" 201 -
+2025-06-04 22:30:19,623 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:30:19] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:30:49,700 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:30:49] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:31:18,482 - dem - INFO - Getting extractions for source: restcountries
+2025-06-04 22:31:18,490 - dem - INFO - Successfully retrieved 1 extractions for source: restcountries
+2025-06-04 22:31:18,491 - werkzeug - INFO - 172.18.0.4 - - [04/Jun/2025 22:31:18] "GET /source/restcountries/extractions HTTP/1.1" 200 -
+2025-06-04 22:31:18,494 - dem - INFO - Creating new load
+2025-06-04 22:31:18,494 - dem - INFO - Creating load for service: mdm, extraction_id: 1e5b5d9d-7a35-4395-9860-8685a4a0d143
+2025-06-04 22:31:18,501 - dem - INFO - Successfully created load cd1b90e3-22d2-4c4b-92b5-45211576b04e
+2025-06-04 22:31:18,511 - werkzeug - INFO - 172.18.0.4 - - [04/Jun/2025 22:31:18] "[35m[1mPOST /loads HTTP/1.1[0m" 201 -
+2025-06-04 22:31:19,754 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:31:19] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:31:49,845 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:31:49] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:31:53,725 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-04 22:31:55,350 - dem - INFO - Successfully created extraction e8eae695-854b-489e-8c52-3564111a3453 for source: restcountries
+2025-06-04 22:31:55,351 - werkzeug - INFO - 192.168.65.1 - - [04/Jun/2025 22:31:55] "[35m[1mPOST /source/restcountries/extractions HTTP/1.1[0m" 201 -
+2025-06-04 22:32:19,920 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:32:19] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:32:49,992 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:32:49] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:33:07,420 - dem - INFO - Initializing DEM service...
+2025-06-04 22:33:07,484 - dem - INFO - Database initialized successfully
+2025-06-04 22:33:07,486 - dem - INFO - Routes registered successfully
+2025-06-04 22:33:07,486 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:33:07,497 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.5:5001
+2025-06-04 22:33:07,497 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 22:33:07,498 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 22:33:07,764 - dem - INFO - Initializing DEM service...
+2025-06-04 22:33:07,812 - dem - INFO - Database initialized successfully
+2025-06-04 22:33:07,813 - dem - INFO - Routes registered successfully
+2025-06-04 22:33:07,814 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:33:07,820 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 22:33:07,820 - werkzeug - INFO -  * Debugger PIN: 895-306-998
+2025-06-04 22:33:12,296 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:33:12] "GET /health HTTP/1.1" 200 -
+2025-06-04 19:33:29,452 - dem - INFO - Initializing DEM service...
+2025-06-04 19:33:29,579 - dem - INFO - Database initialized successfully
+2025-06-04 19:33:29,580 - dem - INFO - Routes registered successfully
+2025-06-04 19:33:29,580 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:33:32,752 - dem - INFO - Initializing DEM service...
+2025-06-04 19:33:32,815 - dem - INFO - Database initialized successfully
+2025-06-04 19:33:32,817 - dem - INFO - Routes registered successfully
+2025-06-04 19:33:32,817 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:33:57,321 - dem - INFO - Initializing DEM service...
+2025-06-04 19:33:57,370 - dem - ERROR - Failed to initialize: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-04 19:34:25,431 - dem - INFO - Initializing DEM service...
+2025-06-04 19:34:25,527 - dem - INFO - Database initialized successfully
+2025-06-04 19:34:25,529 - dem - INFO - Routes registered successfully
+2025-06-04 19:34:25,529 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:34:25,570 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.132.241.162:5001
+2025-06-04 19:34:25,570 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 19:34:25,571 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 19:34:25,786 - dem - INFO - Initializing DEM service...
+2025-06-04 19:34:25,846 - dem - INFO - Database initialized successfully
+2025-06-04 19:34:25,848 - dem - INFO - Routes registered successfully
+2025-06-04 19:34:25,848 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:34:25,867 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 19:34:25,875 - werkzeug - INFO -  * Debugger PIN: 580-649-576
+2025-06-04 19:34:52,865 - dem - INFO - Initializing DEM service...
+2025-06-04 19:34:52,963 - dem - INFO - Database initialized successfully
+2025-06-04 19:34:52,965 - dem - INFO - Routes registered successfully
+2025-06-04 19:34:52,965 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:34:52,999 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.132.241.162:5001
+2025-06-04 19:34:52,999 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 19:34:53,000 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 19:34:53,222 - dem - INFO - Initializing DEM service...
+2025-06-04 19:34:53,285 - dem - INFO - Database initialized successfully
+2025-06-04 19:34:53,287 - dem - INFO - Routes registered successfully
+2025-06-04 19:34:53,287 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:34:53,306 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 19:34:53,312 - werkzeug - INFO -  * Debugger PIN: 580-649-576
+2025-06-04 19:35:25,180 - dem - INFO - Initializing DEM service...
+2025-06-04 19:35:25,279 - dem - INFO - Database initialized successfully
+2025-06-04 19:35:25,280 - dem - INFO - Routes registered successfully
+2025-06-04 19:35:25,280 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:35:25,315 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.132.241.162:5001
+2025-06-04 19:35:25,315 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 19:35:25,316 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 19:35:25,552 - dem - INFO - Initializing DEM service...
+2025-06-04 19:35:25,622 - dem - INFO - Database initialized successfully
+2025-06-04 19:35:25,623 - dem - INFO - Routes registered successfully
+2025-06-04 19:35:25,623 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:35:25,643 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 19:35:25,650 - werkzeug - INFO -  * Debugger PIN: 580-649-576
+2025-06-04 19:35:55,918 - werkzeug - INFO -  * Detected change in '/Users/gabihert/Documents/Projects/faculdade/t1-es-II/dem/run.py', reloading
+2025-06-04 19:35:56,010 - werkzeug - INFO -  * Restarting with stat
