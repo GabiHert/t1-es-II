@@ -155,41 +155,39 @@ Extracted data is stored in the `extractions/<source>` directory with the follow
 ## Database Schema
 
 ### DEM Database
-- extractions: Stores extraction metadata and status
-  - extraction_id (PK)
-  - source
-  - status
-  - created_at
-  - completed_at
-  - file_path
-  - error
+- extractions: Stores extraction metadata
+  - extraction_id (UUID, PK): Unique identifier for the extraction
+  - source (VARCHAR): Source of the extraction (e.g., restcountries)
+  - status (VARCHAR): Current status of the extraction
+  - created_at (TIMESTAMP): When the extraction was created
+
 - loads: Stores load process information
-  - load_id (PK)
-  - service
-  - extraction_id (FK)
-  - status
-  - created_at
-  - completed_at
-  - error
+  - load_id (UUID, PK): Unique identifier for the load
+  - extraction_id (UUID, FK): Reference to the extraction
+  - source (VARCHAR): Source of the data
+  - service (VARCHAR): Target service (e.g., mdm)
+  - created_at (TIMESTAMP): When the load was created
+  - status (VARCHAR): Current status of the load
 
 ### MDM Database
 - countries: Stores country information
-  - country_id (PK)
-  - country_name
-  - numeric_code
-  - capital_city
-  - population
-  - area
-  - created_at
-  - updated_at
+  - country_id (SERIAL, PK): Auto-incrementing identifier
+  - country_name (VARCHAR): Official name of the country
+  - numeric_code (INTEGER): ISO numeric country code
+  - capital_city (VARCHAR): Name of the capital city
+  - population (BIGINT): Total population
+  - area (FLOAT): Total area in square kilometers
+  - created_at (TIMESTAMP): When the record was created
+  - updated_at (TIMESTAMP): When the record was last modified
+
 - currencies: Stores currency information
-  - currency_id (PK)
-  - currency_code
-  - currency_name
-  - currency_symbol
-  - country_id (FK)
-  - created_at
-  - updated_at
+  - currency_id (SERIAL, PK): Auto-incrementing identifier
+  - currency_code (VARCHAR): ISO currency code
+  - currency_name (VARCHAR): Full name of the currency
+  - currency_symbol (VARCHAR): Currency symbol
+  - country_id (INTEGER, FK): Reference to countries table
+  - created_at (TIMESTAMP): When the record was created
+  - updated_at (TIMESTAMP): When the record was last modified
 
 ## Error Handling
 Both services implement consistent error handling:
