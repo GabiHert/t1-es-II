@@ -9,6 +9,46 @@ servers:
     description: Local development server
 
 paths:
+  /health:
+    get:
+      summary: Health check
+      description: Check the health status of the service and its database connection
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [healthy]
+                  database:
+                    type: string
+                    enum: [connected]
+                  service:
+                    type: string
+                    enum: [dem]
+        '500':
+          description: Service is unhealthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [unhealthy]
+                  database:
+                    type: string
+                    enum: [disconnected]
+                  service:
+                    type: string
+                    enum: [dem]
+                  error:
+                    type: string
+
   /source/{source}/extractions:
     get:
       summary: Get all extractions for a source
@@ -30,14 +70,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Extraction'
-        '404':
-          description: Source not found
+        '400':
+          description: Invalid source or error retrieving extractions
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
 
-  /source/{source}/extraction:
     post:
       summary: Create new extraction
       description: Creates a new extraction for the specified source
@@ -63,7 +102,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
 
-  /load:
+  /loads:
+    get:
+      summary: Get all loads
+      description: Returns all load processes
+      responses:
+        '200':
+          description: List of load processes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Load'
+        '400':
+          description: Error retrieving loads
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
     post:
       summary: Create new load process
       description: Creates a new load process to transfer data from an extraction to a target service
@@ -92,31 +150,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/Load'
         '400':
-          description: Invalid request parameters
+          description: Invalid request parameters or load creation failed
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        '404':
-          description: Extraction not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-
-  /loads:
-    get:
-      summary: Get all loads
-      description: Returns all load processes
-      responses:
-        '200':
-          description: List of load processes
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Load'
 
   /extractions/{extraction_id}:
     post:
@@ -130,14 +168,14 @@ paths:
             type: string
           description: ID of the extraction to reprocess
       responses:
-        '200':
+        '201':
           description: Extraction reprocessed successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Extraction'
-        '404':
-          description: Extraction not found
+                $ref: '#/components/schemas/Load'
+        '400':
+          description: Invalid extraction ID or reprocessing failed
           content:
             application/json:
               schema:
@@ -155,24 +193,14 @@ components:
           type: string
           enum: [restcountries]
           description: Source of the extracted data
-        status:
-          type: string
-          enum: [pending, processing, completed, failed]
-          description: Current status of the extraction
         created_at:
           type: string
           format: date-time
           description: Timestamp when the extraction was created
-        completed_at:
+        status:
           type: string
-          format: date-time
-          description: Timestamp when the extraction was completed
-        file_path:
-          type: string
-          description: Path to the extracted data file
-        error:
-          type: string
-          description: Error message if the extraction failed
+          enum: [pending, processing, completed, failed]
+          description: Current status of the extraction
 
     Load:
       type: object
@@ -180,28 +208,25 @@ components:
         load_id:
           type: string
           description: Unique identifier for the load process
+        extraction_id:
+          type: string
+          description: ID of the extraction being loaded
         service:
           type: string
           enum: [mdm]
           description: Target service for the load
-        extraction_id:
+        source:
           type: string
-          description: ID of the extraction being loaded
-        status:
-          type: string
-          enum: [pending, processing, completed, failed]
-          description: Current status of the load process
+          enum: [restcountries]
+          description: Source of the data being loaded
         created_at:
           type: string
           format: date-time
           description: Timestamp when the load was created
-        completed_at:
+        status:
           type: string
-          format: date-time
-          description: Timestamp when the load was completed
-        error:
-          type: string
-          description: Error message if the load failed
+          enum: [pending, processing, completed, failed]
+          description: Current status of the load process
 
     Error:
       type: object
