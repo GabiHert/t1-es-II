@@ -1,0 +1,367 @@
+openapi: 3.0.0
+info:
+  title: MDM API
+  description: API for managing countries and currencies data
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+  /sync:
+    get:
+      summary: Sync data
+      description: Fetches latest injection and triggers a new extraction
+      responses:
+        '200':
+          description: Successful sync operation
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /countries:
+    get:
+      summary: Get all countries
+      description: Retrieve a list of all countries
+      responses:
+        '200':
+          description: List of countries
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+    
+    post:
+      summary: Create a new country
+      description: Add a new country to the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CountryInput'
+      responses:
+        '201':
+          description: Country created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+        '400':
+          description: Invalid JSON format or validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /countries/{country_id}:
+    get:
+      summary: Get country by ID
+      description: Retrieve a specific country by its ID
+      parameters:
+        - name: country_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the country
+      responses:
+        '200':
+          description: Country found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+        '404':
+          description: Country not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /countries/numeric-code/{numeric_code}:
+    get:
+      summary: Get country by numeric code
+      description: Retrieve a specific country by its numeric code
+      parameters:
+        - name: numeric_code
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The numeric code of the country
+      responses:
+        '200':
+          description: Country found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+        '404':
+          description: Country not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /currencies:
+    get:
+      summary: Get all currencies
+      description: Retrieve a list of all currencies
+      responses:
+        '200':
+          description: List of currencies
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Currency'
+    
+    post:
+      summary: Create a new currency
+      description: Add a new currency to the database
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CurrencyInput'
+      responses:
+        '201':
+          description: Currency created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+        '400':
+          description: Invalid JSON format or validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /currencies/{currency_id}:
+    get:
+      summary: Get currency by ID
+      description: Retrieve a specific currency by its ID
+      parameters:
+        - name: currency_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the currency
+      responses:
+        '200':
+          description: Currency found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+        '404':
+          description: Currency not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    put:
+      summary: Update a currency
+      description: Update an existing currency by its ID
+      parameters:
+        - name: currency_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the currency to update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CurrencyInput'
+      responses:
+        '200':
+          description: Currency updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+        '404':
+          description: Currency not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    
+    delete:
+      summary: Delete a currency
+      description: Delete an existing currency by its ID
+      parameters:
+        - name: currency_id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: The ID of the currency to delete
+      responses:
+        '204':
+          description: Currency deleted successfully
+        '404':
+          description: Currency not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /currencies/code/{code}:
+    get:
+      summary: Get currency by code
+      description: Retrieve a specific currency by its code (e.g., USD, EUR)
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The currency code
+      responses:
+        '200':
+          description: Currency found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Currency'
+        '404':
+          description: Currency not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Country:
+      type: object
+      properties:
+        country_id:
+          type: integer
+          description: The unique identifier of the country
+        country_name:
+          type: string
+          description: The name of the country
+        numeric_code:
+          type: integer
+          description: The numeric code of the country
+        capital_city:
+          type: string
+          description: The capital city of the country
+        population:
+          type: integer
+          format: int64
+          description: The population of the country
+        area:
+          type: number
+          format: float
+          description: The area of the country in square kilometers
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp of when the record was created
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp of when the record was last updated
+        currencies:
+          type: array
+          items:
+            $ref: '#/components/schemas/Currency'
+          description: List of currencies associated with this country
+
+    CountryInput:
+      type: object
+      required:
+        - country_name
+        - numeric_code
+        - capital_city
+        - population
+        - area
+      properties:
+        country_name:
+          type: string
+          description: The name of the country
+        numeric_code:
+          type: integer
+          description: The numeric code of the country
+        capital_city:
+          type: string
+          description: The capital city of the country
+        population:
+          type: integer
+          format: int64
+          description: The population of the country
+        area:
+          type: number
+          format: float
+          description: The area of the country in square kilometers
+
+    Currency:
+      type: object
+      properties:
+        currency_id:
+          type: integer
+          description: The unique identifier of the currency
+        currency_code:
+          type: string
+          description: The currency code (e.g., USD, EUR)
+        currency_name:
+          type: string
+          description: The full name of the currency
+        currency_symbol:
+          type: string
+          description: The symbol of the currency
+        country_id:
+          type: integer
+          description: The ID of the country this currency belongs to
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp of when the record was created
+        updated_at:
+          type: string
+          format: date-time
+          description: Timestamp of when the record was last updated
+
+    CurrencyInput:
+      type: object
+      required:
+        - currency_code
+        - currency_name
+        - currency_symbol
+        - country_id
+      properties:
+        currency_code:
+          type: string
+          description: The currency code (e.g., USD, EUR)
+        currency_name:
+          type: string
+          description: The full name of the currency
+        currency_symbol:
+          type: string
+          description: The symbol of the currency
+        country_id:
+          type: integer
+          description: The ID of the country this currency belongs to
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message 

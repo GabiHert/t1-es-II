@@ -1,0 +1,211 @@
+openapi: 3.0.0
+info:
+  title: Data Extraction and Management (DEM) API
+  description: Service responsible for extracting data from various sources and loading it into the MDM (Master Data Management) service.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5001
+    description: Local development server
+
+paths:
+  /source/{source}/extractions:
+    get:
+      summary: Get all extractions for a source
+      description: Returns all extractions for a specific source
+      parameters:
+        - name: source
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [restcountries]
+          description: The source to get extractions from
+      responses:
+        '200':
+          description: List of extractions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Extraction'
+        '404':
+          description: Source not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /source/{source}/extraction:
+    post:
+      summary: Create new extraction
+      description: Creates a new extraction for the specified source
+      parameters:
+        - name: source
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [restcountries]
+          description: The source to extract data from
+      responses:
+        '201':
+          description: Extraction created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Extraction'
+        '400':
+          description: Invalid source or extraction failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /load:
+    post:
+      summary: Create new load process
+      description: Creates a new load process to transfer data from an extraction to a target service
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - service
+                - extraction_id
+              properties:
+                service:
+                  type: string
+                  enum: [mdm]
+                  description: Target service to load data into
+                extraction_id:
+                  type: string
+                  description: ID of the extraction to load
+      responses:
+        '201':
+          description: Load process created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Load'
+        '400':
+          description: Invalid request parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Extraction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /loads:
+    get:
+      summary: Get all loads
+      description: Returns all load processes
+      responses:
+        '200':
+          description: List of load processes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Load'
+
+  /extractions/{extraction_id}:
+    post:
+      summary: Reprocess extraction
+      description: Reprocesses an existing extraction
+      parameters:
+        - name: extraction_id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the extraction to reprocess
+      responses:
+        '200':
+          description: Extraction reprocessed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Extraction'
+        '404':
+          description: Extraction not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Extraction:
+      type: object
+      properties:
+        extraction_id:
+          type: string
+          description: Unique identifier for the extraction
+        source:
+          type: string
+          enum: [restcountries]
+          description: Source of the extracted data
+        status:
+          type: string
+          enum: [pending, processing, completed, failed]
+          description: Current status of the extraction
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when the extraction was created
+        completed_at:
+          type: string
+          format: date-time
+          description: Timestamp when the extraction was completed
+        file_path:
+          type: string
+          description: Path to the extracted data file
+        error:
+          type: string
+          description: Error message if the extraction failed
+
+    Load:
+      type: object
+      properties:
+        load_id:
+          type: string
+          description: Unique identifier for the load process
+        service:
+          type: string
+          enum: [mdm]
+          description: Target service for the load
+        extraction_id:
+          type: string
+          description: ID of the extraction being loaded
+        status:
+          type: string
+          enum: [pending, processing, completed, failed]
+          description: Current status of the load process
+        created_at:
+          type: string
+          format: date-time
+          description: Timestamp when the load was created
+        completed_at:
+          type: string
+          format: date-time
+          description: Timestamp when the load was completed
+        error:
+          type: string
+          description: Error message if the load failed
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message 
