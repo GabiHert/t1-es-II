@@ -18,5 +18,5 @@ class Country(Base):
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
-    currencies = relationship("Currency", back_populates="country")
+    currencies = relationship("Currency", back_populates="country", cascade="all, delete-orphan")
 

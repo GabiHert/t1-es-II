@@ -107,8 +107,6 @@ class ExtractionService:
                 raise ValueError("Extraction file not found")
                 
             latest_file = max(files, key=os.path.getctime)
-            # Get file timestamp once, will be used for all comparisons
-            file_timestamp = datetime.fromtimestamp(os.path.getctime(latest_file))
             
             with open(latest_file, 'r') as f:
                 data = json.load(f)
@@ -117,10 +115,20 @@ class ExtractionService:
             
             # Process each country
             for country_data in data:
-                country, currencies = strategy.transform_for_mdm(country_data)
-                
                 # Check if country exists using numeric code
-                response = requests.get(f"{ExtractionService.MDM_BASE_URL}/countries/numeric/{country['numeric_code']}")
+                response = requests.get(f"{ExtractionService.MDM_BASE_URL}/countries/numeric/{country_data.get('ccn3', 0)}")
+                existing_country = None
+                
+                if response.status_code == 200:
+                    existing_country = response.json()
+                    # Get existing currencies for this country
+                    currencies_response = requests.get(f"{ExtractionService.MDM_BASE_URL}/currencies")
+                    existing_currencies = [c for c in currencies_response.json() 
+                                        if c.get("country_id") == existing_country["country_id"]]
+                    existing_country["currencies"] = existing_currencies
+                
+                # Transform data with existing timestamps if available
+                country, currencies = strategy.transform_for_mdm(country_data, existing_country)
                 
                 if response.status_code == 404:
                     # Create new country
@@ -129,15 +137,10 @@ class ExtractionService:
                     response.raise_for_status()
                     country_id = response.json()["country_id"]
                 else:
-                    existing_country = response.json()
                     country_id = existing_country["country_id"]
-                    
-                    # Update if our data is newer
-                    country_updated_at = datetime.fromisoformat(existing_country["updated_at"])
-                    
-                    if file_timestamp > country_updated_at:
-                        requests.patch(f"{ExtractionService.MDM_BASE_URL}/countries/{country_id}",
-                                    json=country)
+                    # Update country
+                    requests.patch(f"{ExtractionService.MDM_BASE_URL}/countries/{country_id}",
+                                json=country)
                 
                 # Process currencies
                 for currency_data in currencies:
@@ -150,11 +153,10 @@ class ExtractionService:
                                    json=currency_data)
                     else:
                         existing_currency = response.json()
-                        currency_updated_at = datetime.fromisoformat(existing_currency["updated_at"])
-                        
-                        if file_timestamp > currency_updated_at:
-                            requests.patch(f"{ExtractionService.MDM_BASE_URL}/currencies/{existing_currency['currency_id']}",
-                                       json=currency_data)
+                        # Preserve created_at from existing currency
+                        currency_data["created_at"] = existing_currency["created_at"]
+                        requests.patch(f"{ExtractionService.MDM_BASE_URL}/currencies/{existing_currency['currency_id']}",
+                                   json=currency_data)
             
             load.status = "FINISHED"
             

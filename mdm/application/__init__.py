@@ -4,6 +4,10 @@ from .usecase import (
     CreateCurrencyUseCase,
     GetCountryUseCase,
     GetCurrencyUseCase,
+    DeleteCountryUseCase,
+    DeleteCurrencyUseCase,
+    UpdateCountryUseCase,
+    UpdateCurrencyUseCase,
     SyncDataUseCase
 )
 from .errors import (
@@ -24,6 +28,10 @@ __all__ = [
     'CreateCurrencyUseCase',
     'GetCountryUseCase',
     'GetCurrencyUseCase',
+    'DeleteCountryUseCase',
+    'DeleteCurrencyUseCase',
+    'UpdateCountryUseCase',
+    'UpdateCurrencyUseCase',
     'SyncDataUseCase',
     'APIError',
     'ValidationError',

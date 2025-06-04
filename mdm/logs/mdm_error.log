@@ -26,3 +26,7 @@
 2025-06-02 14:57:12,219 - mdm - ERROR - Failed to register routes: cannot import name 'CountryDTO' from 'infra.entrypoint.dtos.country' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/dtos/country.py)
 2025-06-02 14:58:09,029 - mdm - ERROR - Failed to register routes: cannot import name 'CountryDTO' from 'infra.entrypoint.dtos.country' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/infra/entrypoint/dtos/country.py)
 2025-06-02 14:59:41,040 - mdm - ERROR - Failed to register routes: cannot import name 'rotes' from 'config.api.rotes.rotes' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/config/api/rotes/rotes.py)
+2025-06-03 20:20:10,692 - mdm - ERROR - Failed to register routes: CountryController.__init__() missing 1 required positional argument: 'delete_country_usecase'
+2025-06-03 20:29:53,964 - mdm - ERROR - Failed to register routes: cannot import name 'DeleteCurrencyUseCase' from 'application' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/application/__init__.py)
+2025-06-03 21:08:59,101 - mdm - ERROR - Failed to register routes: cannot import name 'UTC' from 'datetime' (/home/thiagomuller/.pyenv/versions/3.10.17/lib/python3.10/datetime.py)
+2025-06-03 21:09:23,952 - mdm - ERROR - Failed to register routes: cannot import name 'UTC' from 'datetime' (/home/thiagomuller/.pyenv/versions/3.10.17/lib/python3.10/datetime.py)

@@ -5,7 +5,10 @@ from application import (
     MissingFieldError,
     InvalidFieldError,
     CreateCurrencyUseCase,
-    GetCurrencyUseCase
+    GetCurrencyUseCase,
+    DeleteCurrencyUseCase,
+    UpdateCurrencyUseCase,
+    NotFoundError
 )
 
 
@@ -13,10 +16,14 @@ class CurrencyController:
     def __init__(
         self,
         create_currency_usecase: CreateCurrencyUseCase,
-        get_currency_usecase: GetCurrencyUseCase
+        get_currency_usecase: GetCurrencyUseCase,
+        delete_currency_usecase: DeleteCurrencyUseCase,
+        update_currency_usecase: UpdateCurrencyUseCase
     ):
         self._create_currency_usecase = create_currency_usecase
         self._get_currency_usecase = get_currency_usecase
+        self._delete_currency_usecase = delete_currency_usecase
+        self._update_currency_usecase = update_currency_usecase
 
     def create_currency(self, currency_data: Dict) -> Dict:
         required_fields = ["currency_code", "currency_name", "currency_symbol", "country_id"]
@@ -84,5 +91,41 @@ class CurrencyController:
             "updated_at": currency.updated_at.isoformat() if currency.updated_at else None
         }
 
+    def delete_currency(self, currency_id: int) -> None:
+        try:
+            self._delete_currency_usecase.delete(currency_id)
+        except ValueError as e:
+            if "Currency with id" in str(e) and "not found" in str(e):
+                raise NotFoundError(str(e))
+            raise InvalidFieldError(str(e))
+
+    def update_currency(self, currency_id: int, currency_data: Dict) -> Dict:
+        try:
+            # Create a CurrencyEntity with only the fields that are provided
+            currency_entity = CurrencyEntity(
+                currency_code=currency_data.get("currency_code"),
+                currency_name=currency_data.get("currency_name"),
+                currency_symbol=currency_data.get("currency_symbol"),
+                country_id=currency_data.get("country_id")
+            )
+        except ValueError as e:
+            raise InvalidFieldError(str(e))
+
+        try:
+            updated_currency = self._update_currency_usecase.update(currency_id, currency_entity)
+            return {
+                "currency_id": updated_currency.currency_id,
+                "currency_code": updated_currency.currency_code,
+                "currency_name": updated_currency.currency_name,
+                "currency_symbol": updated_currency.currency_symbol,
+                "country_id": updated_currency.country_id,
+                "created_at": updated_currency.created_at.isoformat() if updated_currency.created_at else None,
+                "updated_at": updated_currency.updated_at.isoformat() if updated_currency.updated_at else None
+            }
+        except ValueError as e:
+            if "Currency with id" in str(e) and "not found" in str(e):
+                raise NotFoundError(str(e))
+            raise InvalidFieldError(str(e))
+
 # Create a default instance for Flask routes
-currency_controller = CurrencyController(None, None)  # Will be properly initialized by the injector 
+currency_controller = CurrencyController(None, None, None, None)  # Will be properly initialized by the injector 

@@ -6,7 +6,9 @@ from application import (
     InvalidFieldError,
     CountryNotFoundError,
     CreateCountryUseCase,
-    GetCountryUseCase
+    GetCountryUseCase,
+    DeleteCountryUseCase,
+    UpdateCountryUseCase
 )
 
 
@@ -14,10 +16,14 @@ class CountryController:
     def __init__(
         self,
         create_country_usecase: CreateCountryUseCase,
-        get_country_usecase: GetCountryUseCase
+        get_country_usecase: GetCountryUseCase,
+        delete_country_usecase: DeleteCountryUseCase,
+        update_country_usecase: UpdateCountryUseCase
     ):
         self._create_country_usecase = create_country_usecase
         self._get_country_usecase = get_country_usecase
+        self._delete_country_usecase = delete_country_usecase
+        self._update_country_usecase = update_country_usecase
 
     def create_country(self, country_data: Dict) -> Dict:
         required_fields = ["country_name", "numeric_code", "capital_city", "population", "area"]
@@ -100,5 +106,43 @@ class CountryController:
                 raise CountryNotFoundError(str(e))
             raise InvalidFieldError(str(e))
 
+    def delete_country(self, country_id: int) -> None:
+        try:
+            self._delete_country_usecase.delete(country_id)
+        except ValueError as e:
+            if "Country with id" in str(e) and "not found" in str(e):
+                raise CountryNotFoundError(str(e))
+            raise InvalidFieldError(str(e))
+
+    def update_country(self, country_id: int, country_data: Dict) -> Dict:
+        try:
+            # Create a CountryEntity with only the fields that are provided
+            country_entity = CountryEntity(
+                country_name=country_data.get("country_name"),
+                numeric_code=country_data.get("numeric_code"),
+                capital_city=country_data.get("capital_city"),
+                population=country_data.get("population"),
+                area=country_data.get("area")
+            )
+        except ValueError as e:
+            raise InvalidFieldError(str(e))
+
+        try:
+            updated_country = self._update_country_usecase.update(country_id, country_entity)
+            return {
+                "country_id": updated_country.country_id,
+                "country_name": updated_country.country_name,
+                "numeric_code": updated_country.numeric_code,
+                "capital_city": updated_country.capital_city,
+                "population": updated_country.population,
+                "area": updated_country.area,
+                "created_at": updated_country.created_at.isoformat() if updated_country.created_at else None,
+                "updated_at": updated_country.updated_at.isoformat() if updated_country.updated_at else None
+            }
+        except ValueError as e:
+            if "Country with id" in str(e) and "not found" in str(e):
+                raise CountryNotFoundError(str(e))
+            raise InvalidFieldError(str(e))
+
 # Create a default instance for Flask routes
-country_controller = CountryController(None, None)  # Will be properly initialized by the injector
+country_controller = CountryController(None, None, None, None)  # Will be properly initialized by the injector

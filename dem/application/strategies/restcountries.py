@@ -26,23 +26,35 @@ class RestCountriesStrategy:
         return filepath
 
     @staticmethod
-    def transform_for_mdm(data):
+    def transform_for_mdm(data, existing_data=None):
+        current_time = datetime.utcnow().isoformat()
+        
+        # If we have existing data, use its created_at, otherwise use current time
+        created_at = existing_data.get("created_at") if existing_data else current_time
+        
         country = {
             "country_name": data["name"]["common"],
             "numeric_code": int(data.get("ccn3", 0)),
             "capital_city": data["capital"][0] if data.get("capital") else "Unknown",
             "population": data.get("population", 0),
-            "area": data.get("area", 0.0)
+            "area": data.get("area", 0.0),
+            "created_at": created_at,
+            "updated_at": current_time
         }
         
         currencies = []
         if data.get("currencies"):
             for code, currency_data in data["currencies"].items():
+                # For currencies, if we have existing data for this code, use its created_at
+                existing_currency = next((c for c in existing_data.get("currencies", []) 
+                                       if c.get("currency_code") == code), None) if existing_data else None
+                
                 currency = {
-                    "currency_id": code,
                     "currency_code": code,
                     "currency_name": currency_data.get("name", ""),
                     "currency_symbol": currency_data.get("symbol", ""),
+                    "created_at": existing_currency.get("created_at") if existing_currency else current_time,
+                    "updated_at": current_time
                 }
                 currencies.append(currency)
                 

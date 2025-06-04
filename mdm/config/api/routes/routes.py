@@ -77,3 +77,29 @@ def get_currency_by_code(currency_code):
     currency = injector.currency_controller.get_currency_by_code(currency_code)
     return jsonify(currency)
 
+
+@routes.route("/countries/<int:country_id>", methods=['DELETE'])
+def delete_country(country_id):
+    injector.country_controller.delete_country(country_id)
+    return '', 204
+
+
+@routes.route("/currencies/<int:currency_id>", methods=['DELETE'])
+def delete_currency(currency_id):
+    injector.currency_controller.delete_currency(currency_id)
+    return '', 204
+
+
+@routes.route("/countries/<int:country_id>", methods=['PATCH'])
+def update_country(country_id):
+    data = get_json_data()
+    country = injector.country_controller.update_country(country_id, data)
+    return jsonify(country)
+
+
+@routes.route("/currencies/<int:currency_id>", methods=['PATCH'])
+def update_currency(currency_id):
+    data = get_json_data()
+    currency = injector.currency_controller.update_currency(currency_id, data)
+    return jsonify(currency)
+
