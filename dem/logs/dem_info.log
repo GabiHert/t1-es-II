@@ -663,3 +663,67 @@ connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection re
 2025-06-03 23:01:47,959 - dem - INFO - Creating new load
 2025-06-03 23:01:47,960 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
 2025-06-03 23:01:47,971 - dem - INFO - Successfully created load 87e4a5b2-4c7d-4c7b-a4e6-c71da223a8cc
+2025-06-04 02:30:52,791 - dem - INFO - Initializing DEM service...
+2025-06-04 02:30:52,792 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-04 02:30:52,793 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-04 02:36:12,958 - dem - INFO - Initializing DEM service...
+2025-06-04 02:36:12,967 - dem - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "dem-db" (172.22.0.2), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-04 02:36:12,968 - dem - ERROR - Failed to start DEM service: (psycopg2.OperationalError) connection to server at "dem-db" (172.22.0.2), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-06-04 02:43:40,126 - dem - INFO - Initializing DEM service...
+2025-06-04 02:43:40,148 - dem - INFO - Database initialized successfully
+2025-06-04 02:43:40,148 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 02:43:40,397 - dem - INFO - Initializing DEM service...
+2025-06-04 02:43:40,407 - dem - INFO - Database initialized successfully
+2025-06-04 02:43:40,407 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 02:50:44,873 - dem - INFO - Initializing DEM service...
+2025-06-04 02:50:44,899 - dem - INFO - Database initialized successfully
+2025-06-04 02:50:44,900 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 02:50:45,160 - dem - INFO - Initializing DEM service...
+2025-06-04 02:50:45,171 - dem - INFO - Database initialized successfully
+2025-06-04 02:50:45,171 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 02:54:33,195 - dem - INFO - Initializing DEM service...
+2025-06-04 02:54:33,239 - dem - INFO - Database initialized successfully
+2025-06-04 02:54:33,239 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 02:54:33,547 - dem - INFO - Initializing DEM service...
+2025-06-04 02:54:33,560 - dem - INFO - Database initialized successfully
+2025-06-04 02:54:33,560 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 03:24:59,174 - dem - INFO - Initializing DEM service...
+2025-06-04 03:24:59,196 - dem - INFO - Database initialized successfully
+2025-06-04 03:24:59,197 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 03:24:59,484 - dem - INFO - Initializing DEM service...
+2025-06-04 03:24:59,495 - dem - INFO - Database initialized successfully
+2025-06-04 03:24:59,495 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 12:06:53,368 - dem - INFO - Initializing DEM service...
+2025-06-04 12:06:53,415 - dem - INFO - Database initialized successfully
+2025-06-04 12:06:53,415 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 12:06:53,762 - dem - INFO - Initializing DEM service...
+2025-06-04 12:06:53,776 - dem - INFO - Database initialized successfully
+2025-06-04 12:06:53,776 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 12:15:45,639 - dem - INFO - Initializing DEM service...
+2025-06-04 12:15:45,666 - dem - INFO - Database initialized successfully
+2025-06-04 12:15:45,666 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 12:15:45,931 - dem - INFO - Initializing DEM service...
+2025-06-04 12:15:45,940 - dem - INFO - Database initialized successfully
+2025-06-04 12:15:45,940 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 12:15:48,032 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-04 12:15:50,154 - dem - INFO - Successfully created extraction 49104a4c-6a9b-407b-9d9f-ee6942adb275 for source: restcountries
+2025-06-04 12:16:22,296 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-04 12:16:24,504 - dem - INFO - Successfully created extraction 62787a5f-4ec8-4595-97aa-62506db5efd6 for source: restcountries
+2025-06-04 12:16:35,227 - dem - INFO - Getting extractions for source: restcountries
+2025-06-04 12:16:35,247 - dem - INFO - Successfully retrieved 2 extractions for source: restcountries

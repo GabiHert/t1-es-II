@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+  dem-db:
+    container_name: dem_postgres
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=dem_database
+      - POSTGRES_USER=dem_user
+      - POSTGRES_PASSWORD=dem_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - dem-db-data:/var/lib/postgresql/data
+      - ./dem/build/sql:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dem_user -d dem_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  mdm-db:
+    container_name: mdm_postgres
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=mdm_database
+      - POSTGRES_USER=mdm_user
+      - POSTGRES_PASSWORD=mdm_password
+    ports:
+      - "5434:5432"
+    volumes:
+      - mdm-db-data:/var/lib/postgresql/data
+      - ./mdm/build/sql:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mdm_user -d mdm_database"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  dem:
+    build:
+      context: ./dem
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      - FLASK_ENV=development
+      - MDM_SERVICE_URL=http://mdm:5002
+      - DATABASE_URL=postgresql://dem_user:dem_password@dem-db:5432/dem_database
+    volumes:
+      - ./dem/logs:/app/logs
+    networks:
+      - app-network
+    depends_on:
+      dem-db:
+        condition: service_healthy
+      mdm:
+        condition: service_started
+    restart: on-failure:3
+    command: sh -c "sleep 5 && python run.py"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  mdm:
+    build:
+      context: ./mdm
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    environment:
+      - FLASK_ENV=development
+      - DATABASE_URL=postgresql://mdm_user:mdm_password@mdm-db:5432/mdm_database
+    volumes:
+      - ./mdm/logs:/app/logs
+    networks:
+      - app-network
+    depends_on:
+      mdm-db:
+        condition: service_healthy
+    restart: on-failure:3
+    command: sh -c "sleep 5 && python run.py"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dem-db-data:
+  mdm-db-data: 

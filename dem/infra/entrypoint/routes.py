@@ -5,6 +5,25 @@ import logging
 api = Blueprint('api', __name__)
 logger = logging.getLogger('dem')
 
+@api.route('/health', methods=['GET'])
+def health_check():
+    try:
+        # Try to make a simple database query
+        ExtractionService.get_all_loads()
+        return jsonify({
+            "status": "healthy",
+            "database": "connected",
+            "service": "dem"
+        }), 200
+    except Exception as e:
+        logger.error(f"Health check failed: {str(e)}")
+        return jsonify({
+            "status": "unhealthy",
+            "database": "disconnected",
+            "service": "dem",
+            "error": str(e)
+        }), 500
+
 @api.route('/source/<source>/extractions', methods=['GET'])
 def get_extractions(source):
     logger.info(f"Getting extractions for source: {source}")

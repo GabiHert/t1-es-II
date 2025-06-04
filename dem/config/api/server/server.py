@@ -30,6 +30,6 @@ class Server:
         """Run the server"""
         self.initialize()
         logger.info(f"Starting DEM service on port {port}")
-        self.app.run(debug=debug, port=port)
+        self.app.run(host='0.0.0.0', debug=debug, port=port)
 
 server = Server() 

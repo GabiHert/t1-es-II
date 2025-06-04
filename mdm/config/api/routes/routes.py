@@ -1,12 +1,15 @@
 from flask import jsonify, request, Blueprint
 from json.decoder import JSONDecodeError
+import logging
 
 from config.api.server.server import server
 from config.injector.injector import injector
 from application import JSONValidationError
+from infra.entrypoint.controllers import country_controller, currency_controller, sync_controller
 
 # Create a Blueprint for all routes
 routes = Blueprint('routes', __name__)
+logger = logging.getLogger('mdm')
 
 def get_json_data():
     """Helper function to safely get JSON data from request"""
@@ -102,4 +105,26 @@ def update_currency(currency_id):
     data = get_json_data()
     currency = injector.currency_controller.update_currency(currency_id, data)
     return jsonify(currency)
+
+
+@routes.route('/health', methods=['GET'])
+def health_check():
+    try:
+        # Try to make a simple database query using the injector
+        injector.country_controller.get_all_countries()
+        logger.info("Health check successful")
+        return jsonify({
+            "status": "healthy",
+            "database": "connected",
+            "service": "mdm"
+        }), 200
+    except Exception as e:
+        error_msg = f"Health check failed: {str(e)}"
+        logger.error(error_msg)
+        return jsonify({
+            "status": "unhealthy",
+            "database": "disconnected",
+            "service": "mdm",
+            "error": str(e)
+        }), 500
 
