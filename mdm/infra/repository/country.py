@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 
 from infra.repository.models.country import Country
 from sqlalchemy.orm import Session
@@ -104,8 +105,12 @@ class CountryRepository(CreateCountryUseCase, GetCountryUseCase, DeleteCountryUs
             country.population = country_entity.population
         if country_entity.area is not None:
             country.area = country_entity.area
+        
+        # Handle timestamps
+        if country_entity.created_at is not None:
+            country.created_at = datetime.fromisoformat(country_entity.created_at) if isinstance(country_entity.created_at, str) else country_entity.created_at
         if country_entity.updated_at is not None:
-            country.updated_at = country_entity.updated_at
+            country.updated_at = datetime.fromisoformat(country_entity.updated_at) if isinstance(country_entity.updated_at, str) else country_entity.updated_at
         
         self.db_session.commit()
         self.db_session.refresh(country)

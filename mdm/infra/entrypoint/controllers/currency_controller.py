@@ -101,13 +101,23 @@ class CurrencyController:
 
     def update_currency(self, currency_id: int, currency_data: Dict) -> Dict:
         try:
-            # Create a CurrencyEntity with only the fields that are provided
-            currency_entity = CurrencyEntity(
-                currency_code=currency_data.get("currency_code"),
-                currency_name=currency_data.get("currency_name"),
-                currency_symbol=currency_data.get("currency_symbol"),
-                country_id=currency_data.get("country_id")
-            )
+            # Only include fields that are actually present in the update data
+            entity_args = {}
+            if "currency_code" in currency_data:
+                entity_args["currency_code"] = currency_data["currency_code"]
+            if "currency_name" in currency_data:
+                entity_args["currency_name"] = currency_data["currency_name"]
+            if "currency_symbol" in currency_data:
+                entity_args["currency_symbol"] = currency_data["currency_symbol"]
+            if "country_id" in currency_data:
+                entity_args["country_id"] = currency_data["country_id"]
+            if "created_at" in currency_data:
+                entity_args["created_at"] = currency_data["created_at"]
+            if "updated_at" in currency_data:
+                entity_args["updated_at"] = currency_data["updated_at"]
+
+            # Create a CurrencyEntity with only the fields that need to be updated
+            currency_entity = CurrencyEntity(**entity_args)
         except ValueError as e:
             raise InvalidFieldError(str(e))
 

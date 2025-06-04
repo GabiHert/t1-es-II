@@ -1,4 +1,5 @@
 from typing import List
+from datetime import datetime
 
 from sqlalchemy.orm import Session
 
@@ -99,8 +100,12 @@ class CurrencyRepository(CreateCurrencyUseCase, GetCurrencyUseCase, DeleteCurren
             currency.currency_symbol = currency_entity.currency_symbol
         if currency_entity.country_id is not None:
             currency.country_id = currency_entity.country_id
+        
+        # Handle timestamps
+        if currency_entity.created_at is not None:
+            currency.created_at = datetime.fromisoformat(currency_entity.created_at) if isinstance(currency_entity.created_at, str) else currency_entity.created_at
         if currency_entity.updated_at is not None:
-            currency.updated_at = currency_entity.updated_at
+            currency.updated_at = datetime.fromisoformat(currency_entity.updated_at) if isinstance(currency_entity.updated_at, str) else currency_entity.updated_at
             
         self.db_session.commit()
         self.db_session.refresh(currency)

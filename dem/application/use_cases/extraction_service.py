@@ -98,6 +98,11 @@ class ExtractionService:
             return
             
         try:
+            # Get the extraction record to use its created_at timestamp
+            extraction = db_session.query(Extraction).filter_by(extraction_id=load.extraction_id).first()
+            if not extraction:
+                raise ValueError("Extraction not found")
+            
             # Find the latest extraction file
             import glob
             import os
@@ -130,6 +135,11 @@ class ExtractionService:
                 # Transform data with existing timestamps if available
                 country, currencies = strategy.transform_for_mdm(country_data, existing_country)
                 
+                # Set timestamps based on extraction's created_at
+                # country["updated_at"] = extraction.created_at.isoformat()
+                # if not existing_country:
+                #     country["created_at"] = extraction.created_at.isoformat()
+                
                 if response.status_code == 404:
                     # Create new country
                     response = requests.post(f"{ExtractionService.MDM_BASE_URL}/countries",
@@ -138,25 +148,34 @@ class ExtractionService:
                     country_id = response.json()["country_id"]
                 else:
                     country_id = existing_country["country_id"]
-                    # Update country
-                    requests.patch(f"{ExtractionService.MDM_BASE_URL}/countries/{country_id}",
-                                json=country)
+                    # Only update if extraction is newer than the last update
+                    existing_updated_at = datetime.fromisoformat(existing_country["updated_at"].replace('Z', '+00:00'))
+                    
+                    if extraction.created_at > existing_updated_at:
+                        requests.patch(f"{ExtractionService.MDM_BASE_URL}/countries/{country_id}",
+                                    json=country)
                 
                 # Process currencies
                 for currency_data in currencies:
                     currency_data["country_id"] = country_id
+                    # currency_data["updated_at"] = extraction.created_at.isoformat()
                     
                     response = requests.get(f"{ExtractionService.MDM_BASE_URL}/currencies/code/{currency_data['currency_code']}")
                     
                     if response.status_code == 404:
+                        currency_data["created_at"] = extraction.created_at.isoformat()
                         requests.post(f"{ExtractionService.MDM_BASE_URL}/currencies",
                                    json=currency_data)
                     else:
                         existing_currency = response.json()
-                        # Preserve created_at from existing currency
-                        currency_data["created_at"] = existing_currency["created_at"]
-                        requests.patch(f"{ExtractionService.MDM_BASE_URL}/currencies/{existing_currency['currency_id']}",
-                                   json=currency_data)
+                        # Only update if extraction is newer than the last update
+                        existing_updated_at = datetime.fromisoformat(existing_currency["updated_at"].replace('Z', '+00:00'))
+                        
+                        if extraction.created_at > existing_updated_at:
+                            # Preserve original created_at from existing currency
+                            currency_data["created_at"] = existing_currency["created_at"]
+                            requests.patch(f"{ExtractionService.MDM_BASE_URL}/currencies/{existing_currency['currency_id']}",
+                                       json=currency_data)
             
             load.status = "FINISHED"
             

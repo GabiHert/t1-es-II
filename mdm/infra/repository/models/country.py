@@ -16,7 +16,7 @@ class Country(Base):
     population = Column(BigInteger, nullable=False)
     area = Column(Float, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow)
 
     currencies = relationship("Currency", back_populates="country", cascade="all, delete-orphan")
 

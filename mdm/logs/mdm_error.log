@@ -30,3 +30,4 @@
 2025-06-03 20:29:53,964 - mdm - ERROR - Failed to register routes: cannot import name 'DeleteCurrencyUseCase' from 'application' (/home/thiagomuller/Documents/ES2/t1-es-II/mdm/application/__init__.py)
 2025-06-03 21:08:59,101 - mdm - ERROR - Failed to register routes: cannot import name 'UTC' from 'datetime' (/home/thiagomuller/.pyenv/versions/3.10.17/lib/python3.10/datetime.py)
 2025-06-03 21:09:23,952 - mdm - ERROR - Failed to register routes: cannot import name 'UTC' from 'datetime' (/home/thiagomuller/.pyenv/versions/3.10.17/lib/python3.10/datetime.py)
+2025-06-03 22:37:49,877 - mdm - ERROR - Failed to register routes: cannot import name 'UTC' from 'datetime' (/home/thiagomuller/.pyenv/versions/3.10.17/lib/python3.10/datetime.py)

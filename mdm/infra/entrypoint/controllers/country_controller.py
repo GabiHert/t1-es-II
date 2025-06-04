@@ -116,14 +116,25 @@ class CountryController:
 
     def update_country(self, country_id: int, country_data: Dict) -> Dict:
         try:
-            # Create a CountryEntity with only the fields that are provided
-            country_entity = CountryEntity(
-                country_name=country_data.get("country_name"),
-                numeric_code=country_data.get("numeric_code"),
-                capital_city=country_data.get("capital_city"),
-                population=country_data.get("population"),
-                area=country_data.get("area")
-            )
+            # Only include fields that are actually present in the update data
+            entity_args = {}
+            if "country_name" in country_data:
+                entity_args["country_name"] = country_data["country_name"]
+            if "numeric_code" in country_data:
+                entity_args["numeric_code"] = country_data["numeric_code"]
+            if "capital_city" in country_data:
+                entity_args["capital_city"] = country_data["capital_city"]
+            if "population" in country_data:
+                entity_args["population"] = country_data["population"]
+            if "area" in country_data:
+                entity_args["area"] = country_data["area"]
+            if "created_at" in country_data:
+                entity_args["created_at"] = country_data["created_at"]
+            if "updated_at" in country_data:
+                entity_args["updated_at"] = country_data["updated_at"]
+
+            # Create a CountryEntity with only the fields that need to be updated
+            country_entity = CountryEntity(**entity_args)
         except ValueError as e:
             raise InvalidFieldError(str(e))
 

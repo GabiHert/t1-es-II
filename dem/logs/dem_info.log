@@ -559,3 +559,107 @@ connection to server at "localhost" (127.0.0.1), port 5433 failed: Connection re
 2025-06-03 21:40:26,153 - dem - INFO - Creating new load
 2025-06-03 21:40:26,153 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
 2025-06-03 21:40:26,162 - dem - INFO - Successfully created load 7fa172fa-6b7a-459b-9248-1abc2fb8d10f
+2025-06-03 21:43:31,826 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 21:43:31,828 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 21:43:31,832 - dem - INFO - Creating new load
+2025-06-03 21:43:31,832 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 21:43:31,839 - dem - INFO - Successfully created load 5876f6db-b6a1-4e69-b5b0-b60069e299d7
+2025-06-03 21:59:47,298 - dem - INFO - Initializing DEM service...
+2025-06-03 21:59:47,322 - dem - INFO - Database initialized successfully
+2025-06-03 21:59:47,322 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 21:59:47,893 - dem - INFO - Initializing DEM service...
+2025-06-03 21:59:47,917 - dem - INFO - Database initialized successfully
+2025-06-03 21:59:47,917 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 21:59:52,245 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 21:59:52,263 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 21:59:52,268 - dem - INFO - Creating new load
+2025-06-03 21:59:52,268 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 21:59:52,282 - dem - INFO - Successfully created load 2a53ce1e-c0ec-4201-b517-1196bb8e0887
+2025-06-03 22:03:25,421 - dem - INFO - Initializing DEM service...
+2025-06-03 22:03:25,444 - dem - INFO - Database initialized successfully
+2025-06-03 22:03:25,444 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:03:27,169 - dem - INFO - Initializing DEM service...
+2025-06-03 22:03:27,192 - dem - INFO - Database initialized successfully
+2025-06-03 22:03:27,192 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:07:06,689 - dem - INFO - Initializing DEM service...
+2025-06-03 22:07:06,712 - dem - INFO - Database initialized successfully
+2025-06-03 22:07:06,713 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:07:10,523 - dem - INFO - Initializing DEM service...
+2025-06-03 22:07:10,548 - dem - INFO - Database initialized successfully
+2025-06-03 22:07:10,548 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:07:15,177 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:07:15,188 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:07:15,192 - dem - INFO - Creating new load
+2025-06-03 22:07:15,192 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:07:15,203 - dem - INFO - Successfully created load 8c643342-d603-4b7f-b178-44aa8b32ffef
+2025-06-03 22:07:55,719 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:07:55,722 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:07:55,726 - dem - INFO - Creating new load
+2025-06-03 22:07:55,726 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:07:55,732 - dem - INFO - Successfully created load f5796a48-3535-4fde-a50a-0fa5a0f863c7
+2025-06-03 22:11:58,213 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:11:58,216 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:11:58,219 - dem - INFO - Creating new load
+2025-06-03 22:11:58,220 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:11:58,227 - dem - INFO - Successfully created load 37df1f14-06c1-4b8b-b94d-7dbc53033a13
+2025-06-03 22:19:16,590 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:19:16,593 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:19:16,597 - dem - INFO - Creating new load
+2025-06-03 22:19:16,597 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:19:16,604 - dem - INFO - Successfully created load 05b6add1-7b2f-4a0a-9106-6169d9ddcd59
+2025-06-03 22:29:57,242 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:29:57,244 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:29:57,248 - dem - INFO - Creating new load
+2025-06-03 22:29:57,248 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:29:57,255 - dem - INFO - Successfully created load 62e67188-7f74-40c0-adb3-99c23a9737e1
+2025-06-03 22:30:07,430 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:30:07,432 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:30:07,436 - dem - INFO - Creating new load
+2025-06-03 22:30:07,436 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:30:07,447 - dem - INFO - Successfully created load 4f6adae5-766c-43bf-af91-80b9e78913f2
+2025-06-03 22:38:06,290 - dem - INFO - Initializing DEM service...
+2025-06-03 22:38:06,313 - dem - INFO - Database initialized successfully
+2025-06-03 22:38:06,313 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:39:32,301 - dem - INFO - Initializing DEM service...
+2025-06-03 22:39:32,325 - dem - INFO - Database initialized successfully
+2025-06-03 22:39:32,325 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:40:51,380 - dem - INFO - Initializing DEM service...
+2025-06-03 22:40:51,405 - dem - INFO - Database initialized successfully
+2025-06-03 22:40:51,406 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:41:24,247 - dem - INFO - Initializing DEM service...
+2025-06-03 22:41:24,270 - dem - INFO - Database initialized successfully
+2025-06-03 22:41:24,271 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:41:40,007 - dem - INFO - Initializing DEM service...
+2025-06-03 22:41:40,030 - dem - INFO - Database initialized successfully
+2025-06-03 22:41:40,030 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:44:09,342 - dem - INFO - Initializing DEM service...
+2025-06-03 22:44:09,374 - dem - INFO - Database initialized successfully
+2025-06-03 22:44:09,374 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:44:15,149 - dem - INFO - Initializing DEM service...
+2025-06-03 22:44:15,173 - dem - INFO - Database initialized successfully
+2025-06-03 22:44:15,173 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:44:25,150 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 22:44:25,162 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 22:44:25,166 - dem - INFO - Creating new load
+2025-06-03 22:44:25,166 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 22:44:25,178 - dem - INFO - Successfully created load 2715d870-ebd5-4aea-b73b-dc40cd258807
+2025-06-03 22:47:55,755 - dem - INFO - Initializing DEM service...
+2025-06-03 22:47:55,779 - dem - INFO - Database initialized successfully
+2025-06-03 22:47:55,779 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:48:03,558 - dem - INFO - Initializing DEM service...
+2025-06-03 22:48:03,582 - dem - INFO - Database initialized successfully
+2025-06-03 22:48:03,582 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:48:17,408 - dem - INFO - Initializing DEM service...
+2025-06-03 22:48:17,433 - dem - INFO - Database initialized successfully
+2025-06-03 22:48:17,433 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:48:22,174 - dem - INFO - Initializing DEM service...
+2025-06-03 22:48:22,198 - dem - INFO - Database initialized successfully
+2025-06-03 22:48:22,198 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 22:48:30,012 - dem - INFO - Initializing DEM service...
+2025-06-03 22:48:30,037 - dem - INFO - Database initialized successfully
+2025-06-03 22:48:30,037 - dem - INFO - Starting DEM service on port 5001
+2025-06-03 23:01:47,943 - dem - INFO - Getting extractions for source: restcountries
+2025-06-03 23:01:47,955 - dem - INFO - Successfully retrieved 4 extractions for source: restcountries
+2025-06-03 23:01:47,959 - dem - INFO - Creating new load
+2025-06-03 23:01:47,960 - dem - INFO - Creating load for service: mdm, extraction_id: 2e1c1dc0-eb13-4ff8-b9f9-a3a218cbafff
+2025-06-03 23:01:47,971 - dem - INFO - Successfully created load 87e4a5b2-4c7d-4c7b-a4e6-c71da223a8cc

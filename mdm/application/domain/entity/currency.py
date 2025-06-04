@@ -1,7 +1,9 @@
 from datetime import datetime
 
 class CurrencyEntity:
-    def __init__(self, currency_code: str, currency_name: str, currency_symbol: str, country_id: int, currency_id: int = None, created_at: datetime = None, updated_at: datetime = None):
+    def __init__(self, currency_code: str = None, currency_name: str = None, currency_symbol: str = None, 
+                 country_id: int = None, currency_id: int = None, created_at: datetime = None, 
+                 updated_at: datetime = None):
         self.currency_id = currency_id
         self.currency_code = currency_code
         self.currency_name = currency_name

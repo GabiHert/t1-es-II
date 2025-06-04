@@ -1,7 +1,9 @@
 from datetime import datetime
 
 class CountryEntity:
-    def __init__(self, country_name: str, numeric_code: int, capital_city: str, population: int, area: float, country_id: int = None, created_at: datetime = None, updated_at: datetime = None):
+    def __init__(self, country_name: str = None, numeric_code: int = None, capital_city: str = None, 
+                 population: int = None, area: float = None, country_id: int = None, 
+                 created_at: datetime = None, updated_at: datetime = None):
         self.country_id = country_id
         self.country_name = country_name
         self.numeric_code = numeric_code
