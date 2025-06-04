@@ -1,5 +1,4 @@
 from flask import Flask
-from infra.entrypoint.routes import api
 from config.database import init_db, db_session
 import logging
 
@@ -8,7 +7,6 @@ logger = logging.getLogger('dem')
 class Server:
     def __init__(self):
         self.app = Flask(__name__)
-        self.app.register_blueprint(api)
         
         @self.app.teardown_appcontext
         def shutdown_session(exception=None):
@@ -22,8 +20,12 @@ class Server:
         try:
             init_db()
             logger.info("Database initialized successfully")
+            # Import and register routes here to avoid circular imports
+            from infra.entrypoint.routes import api
+            self.app.register_blueprint(api)
+            logger.info("Routes registered successfully")
         except Exception as e:
-            logger.error(f"Failed to initialize database: {str(e)}")
+            logger.error(f"Failed to initialize: {str(e)}")
             raise
             
     def run(self, debug=False, port=5001):

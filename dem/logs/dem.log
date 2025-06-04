@@ -1,0 +1,34 @@
+2025-06-04 19:22:26,176 - dem - INFO - Initializing DEM service...
+2025-06-04 19:22:26,285 - dem - INFO - Database initialized successfully
+2025-06-04 19:22:26,285 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:22:26,344 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.132.241.162:5001
+2025-06-04 19:22:26,344 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 19:22:26,345 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 19:22:26,605 - dem - INFO - Initializing DEM service...
+2025-06-04 19:22:26,636 - dem - INFO - Database initialized successfully
+2025-06-04 19:22:26,636 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 19:22:26,656 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 19:22:26,666 - werkzeug - INFO -  * Debugger PIN: 580-649-576
+2025-06-04 22:23:24,882 - dem - INFO - Initializing DEM service...
+2025-06-04 22:23:24,940 - dem - INFO - Database initialized successfully
+2025-06-04 22:23:24,941 - dem - INFO - Routes registered successfully
+2025-06-04 22:23:24,942 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:23:24,973 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://172.18.0.5:5001
+2025-06-04 22:23:24,974 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-06-04 22:23:24,974 - werkzeug - INFO -  * Restarting with stat
+2025-06-04 22:23:25,169 - dem - INFO - Initializing DEM service...
+2025-06-04 22:23:25,215 - dem - INFO - Database initialized successfully
+2025-06-04 22:23:25,216 - dem - INFO - Routes registered successfully
+2025-06-04 22:23:25,216 - dem - INFO - Starting DEM service on port 5001
+2025-06-04 22:23:25,221 - werkzeug - WARNING -  * Debugger is active!
+2025-06-04 22:23:25,222 - werkzeug - INFO -  * Debugger PIN: 981-365-616
+2025-06-04 22:23:29,833 - werkzeug - INFO - 127.0.0.1 - - [04/Jun/2025 22:23:29] "GET /health HTTP/1.1" 200 -
+2025-06-04 22:23:34,724 - dem - INFO - Creating new extraction for source: restcountries
+2025-06-04 22:23:36,131 - dem - INFO - Successfully created extraction c5518922-c1ae-4ae3-89fd-5a36d3fecc56 for source: restcountries
+2025-06-04 22:23:36,132 - werkzeug - INFO - 192.168.65.1 - - [04/Jun/2025 22:23:36] "[35m[1mPOST /source/restcountries/extractions HTTP/1.1[0m" 201 -
